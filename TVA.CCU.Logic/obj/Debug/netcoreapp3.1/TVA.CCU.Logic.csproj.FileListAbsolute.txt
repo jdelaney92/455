@@ -1,0 +1,8 @@
+C:\Users\Mike\source\repos\WpfApp2\TVA.CCU.Logic\bin\Debug\netcoreapp3.1\TVA.CCU.Logic.deps.json
+C:\Users\Mike\source\repos\WpfApp2\TVA.CCU.Logic\bin\Debug\netcoreapp3.1\TVA.CCU.Logic.dll
+C:\Users\Mike\source\repos\WpfApp2\TVA.CCU.Logic\bin\Debug\netcoreapp3.1\TVA.CCU.Logic.pdb
+C:\Users\Mike\source\repos\WpfApp2\TVA.CCU.Logic\obj\Debug\netcoreapp3.1\TVA.CCU.Logic.csprojAssemblyReference.cache
+C:\Users\Mike\source\repos\WpfApp2\TVA.CCU.Logic\obj\Debug\netcoreapp3.1\TVA.CCU.Logic.AssemblyInfoInputs.cache
+C:\Users\Mike\source\repos\WpfApp2\TVA.CCU.Logic\obj\Debug\netcoreapp3.1\TVA.CCU.Logic.AssemblyInfo.cs
+C:\Users\Mike\source\repos\WpfApp2\TVA.CCU.Logic\obj\Debug\netcoreapp3.1\TVA.CCU.Logic.dll
+C:\Users\Mike\source\repos\WpfApp2\TVA.CCU.Logic\obj\Debug\netcoreapp3.1\TVA.CCU.Logic.pdb
