@@ -8,44 +8,56 @@
         Title="Excel1InputWindow" Height="450" Width="800">
     
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid>
-        
-            <Label Content="BORROWER and LOAN INFORMATION" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="35" Width="268" FontWeight="Bold" FontSize="14"/>
+
+
+
+
+        <TabControl>
+            <TabItem Header="Input Form">
+                <Grid>
+                    <Label Content="BORROWER and LOAN INFORMATION" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="35" Width="268" FontWeight="Bold" FontSize="14"/>
+                    <Label Content="Date:" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.333,0.843"/>
+                    <Label Content="Applicant(s) Name(s):" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Applicant Street Address:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Applicant City, State, Zip:" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Property Being Mortgaged - Street Address:" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Property Being Mortgaged - City, State, Zip:" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Sale Price (if purchase)" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Select" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
+                    <RadioButton Content="In Months (for Construction Loan)" HorizontalAlignment="Left" Margin="80,276,0,0" VerticalAlignment="Top"/>
+                    <RadioButton Content="In Years" HorizontalAlignment="Left" Margin="310,276,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Purpose:" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Loan ID# (Member Number-Loan ID:" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Loan Amount:" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Interest Rate:" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Estimated Taxes and Insurance (monthly):" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
+
+                    <TextBox Name="TestIn" HorizontalAlignment="Left" Height="23" Margin="260,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="260,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="260,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="260,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="260,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="260,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="260,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="260,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="260,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="260,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="260,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="260,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+
+                    <Label Content="CLOSING COST INFORMATION" HorizontalAlignment="Left" Margin="10,450,0,0" VerticalAlignment="Top" Height="35" Width="212" FontWeight="Bold" FontSize="14"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Form Output" >
+                <Grid>
+                    <TextBox Name="TestOut" HorizontalAlignment="Left" Height="23" Margin="260,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                </Grid>
+            </TabItem> 
+        </TabControl>
             
-            <Label Content="Date:" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.333,0.843"/>
-            <Label Content="Applicant(s) Name(s):" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
-            <Label Content="Applicant Street Address:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
-            <Label Content="Applicant City, State, Zip:" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
-            <Label Content="Property Being Mortgaged - Street Address:" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
-            <Label Content="Property Being Mortgaged - City, State, Zip:" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
-            <Label Content="Sale Price (if purchase)" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
-            <Label Content="Select" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
-            <RadioButton Content="In Months (for Construction Loan)" HorizontalAlignment="Left" Margin="80,276,0,0" VerticalAlignment="Top"/>
-            <RadioButton Content="In Years" HorizontalAlignment="Left" Margin="310,276,0,0" VerticalAlignment="Top"/>
-            <Label Content="Purpose:" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
-            <Label Content="Loan ID# (Member Number-Loan ID:" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
-            <Label Content="Loan Amount:" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
-            <Label Content="Interest Rate:" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
-            <Label Content="Estimated Taxes and Insurance (monthly):" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
-         
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="260,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="260,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="260,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="260,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="260,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="260,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="260,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="260,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="260,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="260,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="260,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="260,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-
-            <Label Content="CLOSING COST INFORMATION" HorizontalAlignment="Left" Margin="10,450,0,0" VerticalAlignment="Top" Height="35" Width="212" FontWeight="Bold" FontSize="14"/>
 
 
-
-        </Grid>
+       
     </ScrollViewer>
 
 </Window>
