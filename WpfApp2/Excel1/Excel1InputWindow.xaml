@@ -5,108 +5,154 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2.Excel1"
         mc:Ignorable="d"
-        Title="Loan Estimate" Height="450" Width="800">
-    
+        Title="Loan Estimate" Height="451" Width="800">
+
     <ScrollViewer VerticalScrollBarVisibility="Auto">
 
 
 
 
-        <TabControl>
+        <TabControl SelectionChanged="TabControl_SelectionChanged">
             <TabItem Header="Input Form">
                 <Grid>
-                    <Label Content="BORROWER and LOAN INFORMATION" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="35" Width="268" FontWeight="Bold" FontSize="14"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="95*"/>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="642*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="BORROWER and LOAN INFORMATION" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="35" Width="268" FontWeight="Bold" FontSize="14" Grid.ColumnSpan="4"/>
                     <Label Content="Date:" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.333,0.843"/>
-                    <Label Content="Applicant(s) Name(s):" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Applicant Street Address:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Applicant City, State, Zip:" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Property Being Mortgaged - Street Address:" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Property Being Mortgaged - City, State, Zip:" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Sale Price (if purchase)" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Select" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
-                    <RadioButton x:Name="inMonths" Content="In Months (for Construction Loan)" HorizontalAlignment="Left" Margin="80,276,0,0" VerticalAlignment="Top"/>
-                    <RadioButton x:Name="inYears" Content="In Years" HorizontalAlignment="Left" Margin="310,276,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Purpose:" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Loan ID# (Member Number-Loan ID:" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Applicant(s) Name(s):" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Applicant Street Address:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Applicant City, State, Zip:" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Property Being Mortgaged - Street Address:" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Property Being Mortgaged - City, State, Zip:" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Sale Price (if purchase)" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Loan Term:" HorizontalAlignment="Left" Margin="9,270,0,0" VerticalAlignment="Top" Width="70"/>
+                    <RadioButton x:Name="inMonths" Content="In Months (for Construction Loan)" HorizontalAlignment="Left" Margin="287,273,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+                    <RadioButton x:Name="inYears" Content="In Years" HorizontalAlignment="Left" Margin="510,273,0,0" VerticalAlignment="Top" Grid.Column="3" RenderTransformOrigin="0.22,0.867"/>
+                    <Label Content="Purpose:" HorizontalAlignment="Left" Margin="10,299,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.464,0.615"/>
+                    <Label Content="Loan ID# (Member Number-Loan ID:" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
                     <Label Content="Loan Amount:" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
                     <Label Content="Interest Rate:" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Estimated Taxes and Insurance (monthly):" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Estimated Taxes and Insurance (monthly):" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
 
-                    <TextBox x:Name="date" HorizontalAlignment="Left" Height="23" Margin="260,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="applicantName" HorizontalAlignment="Left" Height="23" Margin="260,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="applicantStreetAddress" HorizontalAlignment="Left" Height="23" Margin="260,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="applicantC_S_Z" HorizontalAlignment="Left" Height="23" Margin="260,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="propertyAddress" HorizontalAlignment="Left" Height="23" Margin="260,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="propertyC_S_Z" HorizontalAlignment="Left" Height="23" Margin="260,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="salePrice" HorizontalAlignment="Left" Height="23" Margin="260,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="purpose" HorizontalAlignment="Left" Height="23" Margin="260,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="loadID" HorizontalAlignment="Left" Height="23" Margin="260,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="loanAmount" HorizontalAlignment="Left" Height="23" Margin="260,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="interestRate" HorizontalAlignment="Left" Height="23" Margin="260,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="estimatedTax_Insurance" HorizontalAlignment="Left" Height="23" Margin="260,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                    <TextBox x:Name="date" HorizontalAlignment="Left" Height="23" Margin="133,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="applicantName" HorizontalAlignment="Left" Height="23" Margin="133,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="applicantStreetAddress" HorizontalAlignment="Left" Height="23" Margin="133,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="applicantC_S_Z" HorizontalAlignment="Left" Height="23" Margin="133,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="propertyAddress" HorizontalAlignment="Left" Height="23" Margin="133,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="propertyC_S_Z" HorizontalAlignment="Left" Height="23" Margin="133,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="salePrice" HorizontalAlignment="Left" Height="23" Margin="133,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="loanTerm" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="133,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+                    <TextBox x:Name="purpose" HorizontalAlignment="Left" Height="23" Margin="133,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="loanID" HorizontalAlignment="Left" Height="23" Margin="133,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="loanAmount" HorizontalAlignment="Left" Height="23" Margin="133,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="interestRate" HorizontalAlignment="Left" Height="23" Margin="133,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="estimatedTax_Insurance" HorizontalAlignment="Left" Height="23" Margin="133,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
 
-                    <Label Content="CLOSING COST INFORMATION" HorizontalAlignment="Left" Margin="10,450,0,0" VerticalAlignment="Top" Height="35" Width="212" FontWeight="Bold" FontSize="14"/>
-                    <Label Content="Origination Fee:" HorizontalAlignment="Left" Margin="10,480,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Processing Fee:" HorizontalAlignment="Left" Margin="10,510,0,0" VerticalAlignment="Top"/>
+                    <Label Content="CLOSING COST INFORMATION" HorizontalAlignment="Left" Margin="10,450,0,0" VerticalAlignment="Top" Height="35" Width="212" FontWeight="Bold" FontSize="14" Grid.ColumnSpan="4"/>
+                    <Label Content="Origination Fee:" HorizontalAlignment="Left" Margin="10,480,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Label Content="Processing Fee:" HorizontalAlignment="Left" Margin="10,510,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
                     <Label Content="Appraisal Fee:" HorizontalAlignment="Left" Margin="10,540,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Credit Report Fee:" HorizontalAlignment="Left" Margin="10,570,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Flood Determination Fee:" HorizontalAlignment="Left" Margin="10,600,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Lender's Attorney Fee:" HorizontalAlignment="Left" Margin="10,630,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Tax Service Fee:" HorizontalAlignment="Left" Margin="10,660,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Pest Inspection Fee:" HorizontalAlignment="Left" Margin="10,690,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Credit Report Fee:" HorizontalAlignment="Left" Margin="10,570,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <Label Content="Flood Determination Fee:" HorizontalAlignment="Left" Margin="10,600,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Lender's Attorney Fee:" HorizontalAlignment="Left" Margin="10,630,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Tax Service Fee:" HorizontalAlignment="Left" Margin="10,660,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Label Content="Pest Inspection Fee:" HorizontalAlignment="Left" Margin="10,690,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
                     <Label Content="Survey Fee:" HorizontalAlignment="Left" Margin="10,720,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Title - Courier Fee:" HorizontalAlignment="Left" Margin="10,750,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Title - Lender's Policy:" HorizontalAlignment="Left" Margin="10,780,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Title - Owner's Policy:" HorizontalAlignment="Left" Margin="10,810,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Title - Settlement Agent:" HorizontalAlignment="Left" Margin="10,840,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Title - Title Search:" HorizontalAlignment="Left" Margin="10,870,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Recording Fees:" HorizontalAlignment="Left" Margin="10,900,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Title - Courier Fee:" HorizontalAlignment="Left" Margin="10,750,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <Label Content="Title - Lender's Policy:" HorizontalAlignment="Left" Margin="10,780,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Title - Owner's Policy:" HorizontalAlignment="Left" Margin="10,810,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Title - Settlement Agent:" HorizontalAlignment="Left" Margin="10,840,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Title - Title Search:" HorizontalAlignment="Left" Margin="10,870,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <Label Content="Recording Fees:" HorizontalAlignment="Left" Margin="10,900,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
                     <Label Content="Transfer Taxes:" HorizontalAlignment="Left" Margin="10,930,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Homeowner's Insurance:" HorizontalAlignment="Left" Margin="10,960,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Mortgage Insurance:" HorizontalAlignment="Left" Margin="10,990,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Prepaid Interest:" HorizontalAlignment="Left" Margin="10,1020,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Homeowner's Insurance:" HorizontalAlignment="Left" Margin="10,960,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Mortgage Insurance:" HorizontalAlignment="Left" Margin="10,990,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Prepaid Interest:" HorizontalAlignment="Left" Margin="10,1020,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
                     <Label Content="HOA Fees:" HorizontalAlignment="Left" Margin="10,1050,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Property Taxes:" HorizontalAlignment="Left" Margin="10,1080,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Downpayment from Borrower (if Purchase):" HorizontalAlignment="Left" Margin="10,1110,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Earnest Money (from purchase contract):" HorizontalAlignment="Left" Margin="10,1140,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Seller Credit for Purchase:" HorizontalAlignment="Left" Margin="10,1170,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Property Taxes:" HorizontalAlignment="Left" Margin="10,1080,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Label Content="Downpayment from Borrower (if Purchase):" HorizontalAlignment="Left" Margin="10,1110,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Earnest Money (from purchase contract):" HorizontalAlignment="Left" Margin="10,1140,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+                    <Label Content="Seller Credit for Purchase:" HorizontalAlignment="Left" Margin="10,1170,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
 
-                    <TextBox x:Name="originationFee" HorizontalAlignment="Left" Height="23" Margin="260,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="processingFee" HorizontalAlignment="Left" Height="23" Margin="260,510,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="appraisalFee" HorizontalAlignment="Left" Height="23" Margin="260,540,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="creditReportFee" HorizontalAlignment="Left" Height="23" Margin="260,570,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="floodDeterminationFee" HorizontalAlignment="Left" Height="23" Margin="260,600,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="lendersAttorneyFee" HorizontalAlignment="Left" Height="23" Margin="260,630,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="taxServiceFee" HorizontalAlignment="Left" Height="23" Margin="260,660,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="pestInspectionFee" HorizontalAlignment="Left" Height="23" Margin="260,690,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="surveyFee" HorizontalAlignment="Left" Height="23" Margin="260,720,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="titleCourierFee" HorizontalAlignment="Left" Height="23" Margin="260,750,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="titleLendersPolicy" HorizontalAlignment="Left" Height="23" Margin="260,780,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="titleOwnersPolicy" HorizontalAlignment="Left" Height="23" Margin="260,810,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="titleSettlementAgent" HorizontalAlignment="Left" Height="23" Margin="260,840,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="titleSearch" HorizontalAlignment="Left" Height="23" Margin="260,870,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="recordingFees" HorizontalAlignment="Left" Height="23" Margin="260,900,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="transferTaxes" HorizontalAlignment="Left" Height="23" Margin="260,930,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="homeownersInsurance" HorizontalAlignment="Left" Height="23" Margin="260,960,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="mortgageInsurance" HorizontalAlignment="Left" Height="23" Margin="260,990,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="prepaidInterest" HorizontalAlignment="Left" Height="23" Margin="260,1020,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="hoaFees" HorizontalAlignment="Left" Height="23" Margin="260,1050,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="propertyTaxes" HorizontalAlignment="Left" Height="23" Margin="260,1080,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="borrowerDownpayment" HorizontalAlignment="Left" Height="23" Margin="260,1110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="earnestMoney" HorizontalAlignment="Left" Height="23" Margin="260,1140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
-                    <TextBox x:Name="sellerCredit" HorizontalAlignment="Left" Height="23" Margin="260,1180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                    <TextBox x:Name="originationFee" HorizontalAlignment="Left" Height="23" Margin="133,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="processingFee" HorizontalAlignment="Left" Height="23" Margin="133,510,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="appraisalFee" HorizontalAlignment="Left" Height="23" Margin="133,540,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="creditReportFee" HorizontalAlignment="Left" Height="23" Margin="133,570,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="floodDeterminationFee" HorizontalAlignment="Left" Height="23" Margin="133,600,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="lendersAttorneyFee" HorizontalAlignment="Left" Height="23" Margin="133,630,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="taxServiceFee" HorizontalAlignment="Left" Height="23" Margin="133,660,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="pestInspectionFee" HorizontalAlignment="Left" Height="23" Margin="133,690,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="surveyFee" HorizontalAlignment="Left" Height="23" Margin="133,720,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="titleCourierFee" HorizontalAlignment="Left" Height="23" Margin="133,750,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="titleLendersPolicy" HorizontalAlignment="Left" Height="23" Margin="133,780,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="titleOwnersPolicy" HorizontalAlignment="Left" Height="23" Margin="133,810,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="titleSettlementAgent" HorizontalAlignment="Left" Height="23" Margin="133,840,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="titleSearch" HorizontalAlignment="Left" Height="23" Margin="133,870,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="recordingFees" HorizontalAlignment="Left" Height="23" Margin="133,900,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="transferTaxes" HorizontalAlignment="Left" Height="23" Margin="133,930,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="homeownersInsurance" HorizontalAlignment="Left" Height="23" Margin="133,960,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="mortgageInsurance" HorizontalAlignment="Left" Height="23" Margin="133,990,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="prepaidInterest" HorizontalAlignment="Left" Height="23" Margin="133,1020,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="hoaFees" HorizontalAlignment="Left" Height="23" Margin="133,1050,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="propertyTaxes" HorizontalAlignment="Left" Height="23" Margin="133,1080,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="borrowerDownpayment" HorizontalAlignment="Left" Height="23" Margin="133,1110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="earnestMoney" HorizontalAlignment="Left" Height="23" Margin="133,1140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <TextBox x:Name="sellerCredit" HorizontalAlignment="Left" Height="23" Margin="133,1180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    
+                    <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Margin="543,1165,0,0" VerticalAlignment="Top" Width="75" Click="Submit_Click" Grid.Column="3"/>
+                    
+                    
                 </Grid>
             </TabItem>
-            <TabItem Header="Form Output" >
-                <Grid>
-                    <TextBox Name="TestOut" HorizontalAlignment="Left" Height="23" Margin="260,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+            <TabItem x:Name="Output" Header="Form Output" >
+                <Grid Margin="0,0,0,-4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="LOAN ESTIMATE" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="35" Width="268" FontWeight="Bold" FontSize="14"/>
+                    <Label Content="Closing Information" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.079,-0.192" Width="268" FontSize="14"/>
+                    <Label Content="Date Issued" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold"/>
+                    <Label Content="Applicants" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold"/>
+                    <Label Content="Property" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,0.5" Width="140" FontWeight="Bold"/>
+                    <Label Content="Sale Price" HorizontalAlignment="Left" Margin="10,246,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold"/>
+                    
+                    <Label x:Name="dateIssued" Content="-" HorizontalAlignment="Left" Margin="155,91,0,0" VerticalAlignment="Top" Width="157"/>
+                    <Label x:Name="applicantNameOutput" Content="-" HorizontalAlignment="Left" Margin="155,122,0,0" VerticalAlignment="Top" Width="157"/>
+                    <Label x:Name="applicantStreetOutput" Content="-" HorizontalAlignment="Left" Margin="155,153,0,0" VerticalAlignment="Top" Width="157"/>
+                    <Label x:Name="applicantCityOutput" Content="-" HorizontalAlignment="Left" Margin="155,184,0,0" VerticalAlignment="Top" Width="157"/>
+                    <Label x:Name="propertyStreetOutput" Content="-" HorizontalAlignment="Left" Margin="155,215,0,0" VerticalAlignment="Top" Width="157"/>
+                    <Label x:Name="propertyCityOutput" Content="-" HorizontalAlignment="Left" Margin="155,246,0,0" VerticalAlignment="Top" Width="157"/>
+                    <Label x:Name="salePriceOutput" Content="-" HorizontalAlignment="Left" Margin="155,277,0,0" VerticalAlignment="Top" Width="157"/>
+                    
+                    <Label Content="Loan Term" HorizontalAlignment="Left" Margin="317,91,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold"/>
+                    <Label Content="Purpose" HorizontalAlignment="Left" Margin="317,122,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold"/>
+                    <Label Content="Product" HorizontalAlignment="Left" Margin="317,153,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold"/>
+                    <Label Content="Loan Type" HorizontalAlignment="Left" Margin="317,184,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold"/>
+                    <Label Content="Conventional" HorizontalAlignment="Left" Margin="475,187,0,0" VerticalAlignment="Top" Width="180"/>
+                    <Label Content="5-5-5-5-5-5 Delayed Variable" HorizontalAlignment="Left" Margin="475,156,0,0" VerticalAlignment="Top" Width="180"/>
+                    <Label Content="Loan ID#" HorizontalAlignment="Left" Margin="317,215,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold"/>
+                    <Label Content="Rate Lock" HorizontalAlignment="Left" Margin="317,246,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold"/>
+                    
+                    <Label x:Name="loanTermOutput" Content="-" HorizontalAlignment="Left" Margin="475,91,0,0" VerticalAlignment="Top" Width="87"/>
+                    <Label x:Name="loanTermTimeOutput" Content="" HorizontalAlignment="Left" Margin="567,91,0,0" VerticalAlignment="Top" Width="88"/>
+                    <Label x:Name="purposeOutput" Content="-" HorizontalAlignment="Left" Margin="475,125,0,0" VerticalAlignment="Top" Width="180"/>
+                    <Label x:Name="loanIDOutput" Content="-" HorizontalAlignment="Left" Margin="475,218,0,0" VerticalAlignment="Top" Width="180"/>
+                    
+                    <Label x:Name="untilBox" Content="until" HorizontalAlignment="Left" Margin="584,246,0,0" VerticalAlignment="Top" Width="41"/>
+                    <Label x:Name="rateLockDateOutput" Content="-" HorizontalAlignment="Left" Margin="630,246,0,0" VerticalAlignment="Top" Width="83" IsEnabled="False" RenderTransformOrigin="0.494,0.5"/>
+                    <RadioButton x:Name="rateLockYes" Content="Yes" HorizontalAlignment="Left" Margin="475,252,0,0" VerticalAlignment="Top" Width="42"/>
+                    <RadioButton x:Name="rateLockNo" Content="No" HorizontalAlignment="Left" Margin="532,252,0,0" VerticalAlignment="Top" Width="47"/>
                 </Grid>
-            </TabItem> 
+            </TabItem>
         </TabControl>
-            
 
 
-       
+
+
     </ScrollViewer>
 
 </Window>

@@ -24,5 +24,65 @@ namespace WpfApp2.Excel1
             InitializeComponent();
         }
 
+        private void Submit_Click(object sender, RoutedEventArgs e)
+        {
+            Output.IsSelected = true;
+
+            if (date.Text.Length != 0)
+            {
+                dateIssued.Content = date.Text;
+            }
+
+            if (applicantName.Text.Length != 0)
+            {
+                applicantNameOutput.Content = applicantName.Text;
+                applicantStreetOutput.Content = applicantStreetAddress.Text;
+                applicantCityOutput.Content = applicantC_S_Z.Text;
+            }
+            
+            if (propertyAddress.Text.Length != 0)
+            {
+                propertyStreetOutput.Content = propertyAddress.Text;
+                propertyCityOutput.Content = propertyC_S_Z.Text;
+            }
+            
+            if (salePrice.Text.Length != 0)
+            {
+                salePriceOutput.Content = salePrice.Text;
+            }
+            
+            if (loanTerm.Text.Length != 0)
+            {
+                loanTermOutput.Content = loanTerm.Text;
+                if (inYears.IsChecked == true)
+                {
+                    loanTermTimeOutput.Content = "in years";
+                }
+                else if (inMonths.IsChecked == true)
+                {
+                    loanTermTimeOutput.Content = "in months";
+                }
+            }
+
+            if (purpose.Text.Length != 0)
+            {
+                purposeOutput.Content = purpose.Text;
+            }
+
+            if (loanID.Text.Length != 0)
+            {
+                loanIDOutput.Content = loanID.Text;
+            }
+
+            if (rateLockYes.IsChecked == true)
+            {
+                //rateLockDateOutput.Content = need to do date addition here. According to excel sheet it is date issued + 45 days
+            }
+        }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
