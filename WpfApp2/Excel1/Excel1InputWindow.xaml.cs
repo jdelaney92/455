@@ -78,6 +78,16 @@ namespace WpfApp2.Excel1
             {
                 //rateLockDateOutput.Content = need to do date addition here. According to excel sheet it is date issued + 45 days
             }
+
+            if (loanAmount.Text.Length != 0)
+            {
+                loanAmountOutput.Content = loanAmount.Text;
+            }
+
+            if (interestRate.Text.Length != 0)
+            {
+                interestRateOutput.Content = interestRate.Text + '%';
+            }
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)

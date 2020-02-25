@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2.Excel1"
         mc:Ignorable="d"
-        Title="Loan Estimate" Height="451" Width="800">
+        Title="Loan Estimate" Height="655" Width="800">
 
     <ScrollViewer VerticalScrollBarVisibility="Auto">
 
@@ -146,6 +146,16 @@
                     <Label x:Name="rateLockDateOutput" Content="-" HorizontalAlignment="Left" Margin="630,246,0,0" VerticalAlignment="Top" Width="83" IsEnabled="False" RenderTransformOrigin="0.494,0.5"/>
                     <RadioButton x:Name="rateLockYes" Content="Yes" HorizontalAlignment="Left" Margin="475,252,0,0" VerticalAlignment="Top" Width="42"/>
                     <RadioButton x:Name="rateLockNo" Content="No" HorizontalAlignment="Left" Margin="532,252,0,0" VerticalAlignment="Top" Width="47"/>
+
+                    <Label Content="LOAN TERMS" HorizontalAlignment="Left" Margin="10,321,0,0" VerticalAlignment="Top" Width="268" FontWeight="Bold" FontSize="14"/>
+                    <Label Content="Loan Amount" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold"/>
+                    <Label Content="Can this amount change after closing?" HorizontalAlignment="Left" Margin="317,321,0,0" VerticalAlignment="Top" Width="245" FontSize="14"/>
+                    <Label Content="Interest Rate" HorizontalAlignment="Left" Margin="10,386,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold"/>
+                    <Label Content="NO" HorizontalAlignment="Left" Margin="317,355,0,0" VerticalAlignment="Top" Width="77" FontWeight="Bold"/>
+                    <Label Content="YES" HorizontalAlignment="Left" Margin="317,386,0,0" VerticalAlignment="Top" Width="77" FontWeight="Bold"/>
+                    
+                    <Label x:Name="loanAmountOutput" Content="-" HorizontalAlignment="Left" Margin="155,355,0,0" VerticalAlignment="Top" Width="123"/>
+                    <Label x:Name="interestRateOutput" Content="-" HorizontalAlignment="Left" Margin="155,386,0,0" VerticalAlignment="Top" Width="123"/>
                 </Grid>
             </TabItem>
         </TabControl>
