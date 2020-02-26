@@ -11,8 +11,8 @@
     <Grid>
 
         <Button Content="Loan Estimate" HorizontalAlignment="Center" Margin="328,272,307.2,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
-        <Button Content="Purchase Closing Disclosure" HorizontalAlignment="Center" Margin="328,313,307.2,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
-        <Button Content="Refinance Closing Disclosure" HorizontalAlignment="Center" Margin="328,352,307.2,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
+        <Button Content="Purchase Closing Disclosure" HorizontalAlignment="Center" Margin="328,313,307.2,0" VerticalAlignment="Top" Width="160" Click="Button_Click" IsEnabled="False"/>
+        <Button Content="Refinance Closing Disclosure" HorizontalAlignment="Center" Margin="328,352,307.2,0" VerticalAlignment="Top" Width="160" Click="Button_Click" IsEnabled="False"/>
         <Image Margin="278,61,250.2,397" HorizontalAlignment="Center" Source="tvaccu-logo-header.png" Stretch="Uniform" Width="267"/>
 
 

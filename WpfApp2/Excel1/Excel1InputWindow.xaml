@@ -26,7 +26,7 @@
                         <ColumnDefinition Width="642*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button x:Name="InputData" Content ="Import" HorizontalAlignment="Left" Margin="557,5,0,0" VerticalAlignment="Top" Width="75" Click="InputData_Click" Grid.Column="3"/>
+                    <Button x:Name="InputData" Content ="Import" HorizontalAlignment="Left" Margin="336,5,0,0" VerticalAlignment="Top" Width="75" Click="InputData_Click" Grid.Column="3"/>
                     <Label Content="BORROWER and LOAN INFORMATION" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="35" Width="268" FontWeight="Bold" FontSize="14" Grid.ColumnSpan="4"/>
                     <Label Content="Date:" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.333,0.843"/>
                     <Label Content="Applicant(s) Name(s):" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
@@ -36,8 +36,8 @@
                     <Label Content="Property Being Mortgaged - City, State, Zip:" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
                     <Label Content="Sale Price (if purchase)" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
                     <Label Content="Loan Term:" HorizontalAlignment="Left" Margin="9,270,0,0" VerticalAlignment="Top" Width="70"/>
-                    <RadioButton x:Name="inMonths" Content="In Months (for Construction Loan)" HorizontalAlignment="Left" Margin="287,273,0,0" VerticalAlignment="Top" Grid.Column="3"/>
-                    <RadioButton x:Name="inYears" Content="In Years" HorizontalAlignment="Left" Margin="510,273,0,0" VerticalAlignment="Top" Grid.Column="3" RenderTransformOrigin="0.22,0.867"/>
+                    <RadioButton x:Name="inMonths" Content="In Months (for Construction Loan)" HorizontalAlignment="Left" Margin="133,273,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+                    <RadioButton x:Name="inYears" Content="In Years" HorizontalAlignment="Left" Margin="368,273,0,0" VerticalAlignment="Top" Grid.Column="3" RenderTransformOrigin="0.22,0.867"/>
                     <Label Content="Purpose:" HorizontalAlignment="Left" Margin="10,299,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.464,0.615"/>
                     <Label Content="Loan ID# (Member Number-Loan ID:" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
                     <Label Content="Loan Amount:" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
@@ -51,7 +51,7 @@
                     <TextBox x:Name="propertyAddress" HorizontalAlignment="Left" Height="23" Margin="133,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
                     <TextBox x:Name="propertyC_S_Z" HorizontalAlignment="Left" Height="23" Margin="133,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
                     <TextBox x:Name="salePrice" HorizontalAlignment="Left" Height="23" Margin="133,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
-                    <TextBox x:Name="loanTerm" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="133,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+
                     <TextBox x:Name="purpose" HorizontalAlignment="Left" Height="23" Margin="133,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
                     <TextBox x:Name="loanID" HorizontalAlignment="Left" Height="23" Margin="133,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
                     <TextBox x:Name="loanAmount" HorizontalAlignment="Left" Height="23" Margin="133,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
@@ -110,11 +110,12 @@
                     <TextBox x:Name="sellerCredit" HorizontalAlignment="Left" Height="23" Margin="133,1170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
 
 
-                   
 
-                    
-                    <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Margin="455,5,0,0" VerticalAlignment="Top" Width="75" Click="Submit_Click" Grid.Column="3"/>
-                    
+
+
+                    <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Margin="530,5,0,0" VerticalAlignment="Top" Width="75" Click="Submit_Click" Grid.Column="3"/>
+                    <Button Content="Export" Grid.Column="3" HorizontalAlignment="Left" Margin="432,5,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False"/>
+
 
 
 
@@ -123,51 +124,51 @@
             <TabItem x:Name="Output" Header="Form Output" >
                 <Grid Margin="0,0,0,-4">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="34*"/>
+                        <ColumnDefinition Width="703*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="LOAN ESTIMATE" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="35" Width="268" FontWeight="Bold" FontSize="14"/>
-                    <Label Content="Closing Information" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.079,-0.192" Width="268" FontSize="14"/>
-                    <Label Content="Date Issued" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold"/>
-                    <Label Content="Applicants" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold"/>
-                    <Label Content="Property" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,0.5" Width="140" FontWeight="Bold"/>
-                    <Label Content="Sale Price" HorizontalAlignment="Left" Margin="10,246,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold"/>
-                    
-                    <Label x:Name="dateIssued" Content="-" HorizontalAlignment="Left" Margin="155,91,0,0" VerticalAlignment="Top" Width="157"/>
-                    <Label x:Name="applicantNameOutput" Content="-" HorizontalAlignment="Left" Margin="155,122,0,0" VerticalAlignment="Top" Width="157"/>
-                    <Label x:Name="applicantStreetOutput" Content="-" HorizontalAlignment="Left" Margin="155,153,0,0" VerticalAlignment="Top" Width="157"/>
-                    <Label x:Name="applicantCityOutput" Content="-" HorizontalAlignment="Left" Margin="155,184,0,0" VerticalAlignment="Top" Width="157"/>
-                    <Label x:Name="propertyStreetOutput" Content="-" HorizontalAlignment="Left" Margin="155,215,0,0" VerticalAlignment="Top" Width="157"/>
-                    <Label x:Name="propertyCityOutput" Content="-" HorizontalAlignment="Left" Margin="155,246,0,0" VerticalAlignment="Top" Width="157"/>
-                    <Label x:Name="salePriceOutput" Content="-" HorizontalAlignment="Left" Margin="155,277,0,0" VerticalAlignment="Top" Width="157"/>
-                    
-                    <Label Content="Loan Term" HorizontalAlignment="Left" Margin="317,91,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold"/>
-                    <Label Content="Purpose" HorizontalAlignment="Left" Margin="317,122,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold"/>
-                    <Label Content="Product" HorizontalAlignment="Left" Margin="317,153,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold"/>
-                    <Label Content="Loan Type" HorizontalAlignment="Left" Margin="317,184,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold"/>
-                    <Label Content="Conventional" HorizontalAlignment="Left" Margin="475,187,0,0" VerticalAlignment="Top" Width="180"/>
-                    <Label Content="5-5-5-5-5-5 Delayed Variable" HorizontalAlignment="Left" Margin="475,156,0,0" VerticalAlignment="Top" Width="180"/>
-                    <Label Content="Loan ID#" HorizontalAlignment="Left" Margin="317,215,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold"/>
-                    <Label Content="Rate Lock" HorizontalAlignment="Left" Margin="317,246,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold"/>
-                    
-                    <Label x:Name="loanTermOutput" Content="-" HorizontalAlignment="Left" Margin="475,91,0,0" VerticalAlignment="Top" Width="87"/>
-                    <Label x:Name="loanTermTimeOutput" Content="" HorizontalAlignment="Left" Margin="567,91,0,0" VerticalAlignment="Top" Width="88"/>
-                    <Label x:Name="purposeOutput" Content="-" HorizontalAlignment="Left" Margin="475,125,0,0" VerticalAlignment="Top" Width="180"/>
-                    <Label x:Name="loanIDOutput" Content="-" HorizontalAlignment="Left" Margin="475,218,0,0" VerticalAlignment="Top" Width="180"/>
-                    
-                    <Label x:Name="untilBox" Content="until" HorizontalAlignment="Left" Margin="584,246,0,0" VerticalAlignment="Top" Width="41"/>
-                    <Label x:Name="rateLockDateOutput" Content="-" HorizontalAlignment="Left" Margin="630,246,0,0" VerticalAlignment="Top" Width="83" IsEnabled="False" RenderTransformOrigin="0.494,0.5"/>
-                    <RadioButton x:Name="rateLockYes" Content="Yes" HorizontalAlignment="Left" Margin="475,252,0,0" VerticalAlignment="Top" Width="42"/>
-                    <RadioButton x:Name="rateLockNo" Content="No" HorizontalAlignment="Left" Margin="532,252,0,0" VerticalAlignment="Top" Width="47"/>
+                    <Label Content="LOAN ESTIMATE" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="35" Width="268" FontWeight="Bold" FontSize="14" Grid.ColumnSpan="2"/>
+                    <Label Content="Closing Information" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.079,-0.192" Width="268" FontSize="14" Grid.ColumnSpan="2"/>
+                    <Label Content="Date Issued" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                    <Label Content="Applicants" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                    <Label Content="Property" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,0.5" Width="140" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                    <Label Content="Sale Price" HorizontalAlignment="Left" Margin="10,277,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold" Grid.ColumnSpan="2"/>
 
-                    <Label Content="LOAN TERMS" HorizontalAlignment="Left" Margin="10,321,0,0" VerticalAlignment="Top" Width="268" FontWeight="Bold" FontSize="14"/>
-                    <Label Content="Loan Amount" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold"/>
-                    <Label Content="Can this amount change after closing?" HorizontalAlignment="Left" Margin="317,321,0,0" VerticalAlignment="Top" Width="245" FontSize="14"/>
-                    <Label Content="Interest Rate" HorizontalAlignment="Left" Margin="10,386,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold"/>
-                    <Label Content="NO" HorizontalAlignment="Left" Margin="317,355,0,0" VerticalAlignment="Top" Width="77" FontWeight="Bold"/>
-                    <Label Content="YES" HorizontalAlignment="Left" Margin="317,386,0,0" VerticalAlignment="Top" Width="77" FontWeight="Bold"/>
-                    
-                    <Label x:Name="loanAmountOutput" Content="-" HorizontalAlignment="Left" Margin="155,355,0,0" VerticalAlignment="Top" Width="123"/>
-                    <Label x:Name="interestRateOutput" Content="-" HorizontalAlignment="Left" Margin="155,386,0,0" VerticalAlignment="Top" Width="123"/>
+                    <Label x:Name="dateIssued" Content="-" HorizontalAlignment="Left" Margin="121,91,0,0" VerticalAlignment="Top" Width="157" Grid.Column="1"/>
+                    <Label x:Name="applicantNameOutput" Content="-" HorizontalAlignment="Left" Margin="121,122,0,0" VerticalAlignment="Top" Width="157" Grid.Column="1"/>
+                    <Label x:Name="applicantStreetOutput" Content="-" HorizontalAlignment="Left" Margin="121,153,0,0" VerticalAlignment="Top" Width="157" Grid.Column="1"/>
+                    <Label x:Name="applicantCityOutput" Content="-" HorizontalAlignment="Left" Margin="121,184,0,0" VerticalAlignment="Top" Width="157" Grid.Column="1"/>
+                    <Label x:Name="propertyStreetOutput" Content="-" HorizontalAlignment="Left" Margin="121,215,0,0" VerticalAlignment="Top" Width="157" Grid.Column="1"/>
+                    <Label x:Name="propertyCityOutput" Content="-" HorizontalAlignment="Left" Margin="121,246,0,0" VerticalAlignment="Top" Width="157" Grid.Column="1"/>
+                    <Label x:Name="salePriceOutput" Content="-" HorizontalAlignment="Left" Margin="121,277,0,0" VerticalAlignment="Top" Width="157" Grid.Column="1"/>
+
+                    <Label Content="Loan Term" HorizontalAlignment="Left" Margin="283,91,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold" Grid.Column="1"/>
+                    <Label Content="Purpose" HorizontalAlignment="Left" Margin="283,122,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold" Grid.Column="1"/>
+                    <Label Content="Product" HorizontalAlignment="Left" Margin="283,153,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold" Grid.Column="1"/>
+                    <Label Content="Loan Type" HorizontalAlignment="Left" Margin="283,184,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold" Grid.Column="1"/>
+                    <Label Content="Conventional" HorizontalAlignment="Left" Margin="441,187,0,0" VerticalAlignment="Top" Width="180" Grid.Column="1"/>
+                    <Label Content="5-5-5-5-5-5 Delayed Variable" HorizontalAlignment="Left" Margin="441,156,0,0" VerticalAlignment="Top" Width="180" Grid.Column="1"/>
+                    <Label Content="Loan ID#" HorizontalAlignment="Left" Margin="283,215,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold" Grid.Column="1"/>
+                    <Label Content="Rate Lock" HorizontalAlignment="Left" Margin="283,246,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold" Grid.Column="1"/>
+
+                    <Label x:Name="loanTermOutput" Content="-" HorizontalAlignment="Left" Margin="441,91,0,0" VerticalAlignment="Top" Width="87" Grid.Column="1"/>
+                    <Label x:Name="purposeOutput" Content="-" HorizontalAlignment="Left" Margin="441,125,0,0" VerticalAlignment="Top" Width="180" Grid.Column="1"/>
+                    <Label x:Name="loanIDOutput" Content="-" HorizontalAlignment="Left" Margin="441,218,0,0" VerticalAlignment="Top" Width="180" Grid.Column="1"/>
+
+                    <Label x:Name="untilBox" Content="until" HorizontalAlignment="Left" Margin="550,246,0,0" VerticalAlignment="Top" Width="41" Grid.Column="1"/>
+                    <Label x:Name="rateLockDateOutput" Content="-" HorizontalAlignment="Left" Margin="596,246,0,0" VerticalAlignment="Top" Width="83" IsEnabled="False" RenderTransformOrigin="0.494,0.5" Grid.Column="1"/>
+                    <RadioButton x:Name="rateLockYes" Content="Yes" HorizontalAlignment="Left" Margin="441,252,0,0" VerticalAlignment="Top" Width="42" Grid.Column="1"/>
+                    <RadioButton x:Name="rateLockNo" Content="No" HorizontalAlignment="Left" Margin="498,252,0,0" VerticalAlignment="Top" Width="47" Grid.Column="1"/>
+
+                    <Label Content="LOAN TERMS" HorizontalAlignment="Left" Margin="10,321,0,0" VerticalAlignment="Top" Width="268" FontWeight="Bold" FontSize="14" Grid.ColumnSpan="2"/>
+                    <Label Content="Loan Amount" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                    <Label Content="Can this amount change after closing?" HorizontalAlignment="Left" Margin="283,321,0,0" VerticalAlignment="Top" Width="245" FontSize="14" Grid.Column="1"/>
+                    <Label Content="Interest Rate" HorizontalAlignment="Left" Margin="10,386,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                    <Label Content="NO" HorizontalAlignment="Left" Margin="283,355,0,0" VerticalAlignment="Top" Width="77" FontWeight="Bold" Grid.Column="1"/>
+                    <Label Content="YES" HorizontalAlignment="Left" Margin="283,386,0,0" VerticalAlignment="Top" Width="77" FontWeight="Bold" Grid.Column="1"/>
+
+                    <Label x:Name="loanAmountOutput" Content="-" HorizontalAlignment="Left" Margin="121,355,0,0" VerticalAlignment="Top" Width="123" Grid.Column="1"/>
+                    <Label x:Name="interestRateOutput" Content="-" HorizontalAlignment="Left" Margin="121,386,0,0" VerticalAlignment="Top" Width="123" Grid.Column="1"/>
                 </Grid>
             </TabItem>
         </TabControl>

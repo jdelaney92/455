@@ -53,16 +53,16 @@ namespace WpfApp2.Excel1
                 salePriceOutput.Content = salePrice.Text;
             }
             
-            if (loanTerm.Text.Length != 0)
+            if (inYears.IsChecked == true || inMonths.IsChecked == true)
             {
-                loanTermOutput.Content = loanTerm.Text;
+                
                 if (inYears.IsChecked == true)
                 {
-                    loanTermTimeOutput.Content = "in years";
+                    loanTermOutput.Content = "in years";
                 }
                 else if (inMonths.IsChecked == true)
                 {
-                    loanTermTimeOutput.Content = "in months";
+                    loanTermOutput.Content = "in months";
                 }
             }
 
