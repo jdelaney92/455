@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2.Excel1"
         mc:Ignorable="d"
-        Title="Loan Estimate" Height="655" Width="800">
+        WindowStyle="SingleBorderWindow"
+        WindowState="Maximized"
+        Title="Loan Estimate">
 
     <ScrollViewer VerticalScrollBarVisibility="Auto">
 
@@ -21,6 +23,8 @@
                         <ColumnDefinition Width="17*"/>
                         <ColumnDefinition Width="642*"/>
                     </Grid.ColumnDefinitions>
+
+                    <Button x:Name="InputData" Content ="Input Data"  HorizontalAlignment="Left" Margin="160.6,25,0,0" VerticalAlignment="Top" Width="75" Click="InputData_Click" Grid.Column="3"/>
                     <Label Content="BORROWER and LOAN INFORMATION" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="35" Width="268" FontWeight="Bold" FontSize="14" Grid.ColumnSpan="4"/>
                     <Label Content="Date:" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.333,0.843"/>
                     <Label Content="Applicant(s) Name(s):" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
@@ -102,10 +106,10 @@
                     <TextBox x:Name="borrowerDownpayment" HorizontalAlignment="Left" Height="23" Margin="133,1110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
                     <TextBox x:Name="earnestMoney" HorizontalAlignment="Left" Height="23" Margin="133,1140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
                     <TextBox x:Name="sellerCredit" HorizontalAlignment="Left" Height="23" Margin="133,1170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
-                    
+
                     <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Margin="350,1170,0,0" VerticalAlignment="Top" Width="75" Click="Submit_Click" Grid.Column="3"/>
-                    
-                    
+
+
                 </Grid>
             </TabItem>
             <TabItem x:Name="Output" Header="Form Output" >

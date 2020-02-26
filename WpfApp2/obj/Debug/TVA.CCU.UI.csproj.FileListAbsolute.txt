@@ -63,7 +63,6 @@ C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\TVA.CCU.UI.csproj.Gene
 C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\TVA.CCU.UI.csproj.CoreCompileInputs.cache
 C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\WpfApp2.exe
 C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\WpfApp2.pdb
-C:\Users\Ryan\Documents\GitHub\455\455\WpfApp2\obj\Debug\TVA.CCU.UI.csprojAssemblyReference.cache
 C:\Users\Jonathan's PC\Source\Repos\4552\WpfApp2\bin\Debug\WpfApp2.exe.config
 C:\Users\Jonathan's PC\Source\Repos\4552\WpfApp2\bin\Debug\WpfApp2.exe
 C:\Users\Jonathan's PC\Source\Repos\4552\WpfApp2\bin\Debug\WpfApp2.pdb
@@ -97,3 +96,4 @@ C:\Users\Noah\Source\Repos\jdelaney92\455\WpfApp2\obj\Debug\WpfApp2.Properties.R
 C:\Users\Noah\Source\Repos\jdelaney92\455\WpfApp2\obj\Debug\TVA.CCU.UI.csproj.GenerateResource.cache
 C:\Users\Noah\Source\Repos\jdelaney92\455\WpfApp2\obj\Debug\WpfApp2.exe
 C:\Users\Noah\Source\Repos\jdelaney92\455\WpfApp2\obj\Debug\WpfApp2.pdb
+C:\Users\Ryan\Documents\GitHub\455\455\WpfApp2\obj\Debug\TVA.CCU.UI.csprojAssemblyReference.cache

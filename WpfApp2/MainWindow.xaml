@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="TVA Community Credit Union" Height="450" Width="800" Background="#FF0B0F61">
+        WindowStyle="SingleBorderWindow"
+        WindowState="Maximized"
+        Title="TVA Community Credit Union" Background="#FF0B0F61">
     <Grid>
-        <Button Content="Loan Estimate" HorizontalAlignment="Left" Margin="321,161,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
-        <Button Content="Purchase Closing Disclosure" HorizontalAlignment="Left" Margin="321,202,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
-        <Button Content="Refinance Closing Disclosure" HorizontalAlignment="Left" Margin="321,241,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
-        <Image Margin="294,22,283,279" Source="tvaccu-logo-header.png" Stretch="Fill"/>
+
+        <Button Content="Loan Estimate" HorizontalAlignment="Center" Margin="328,272,307.2,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
+        <Button Content="Purchase Closing Disclosure" HorizontalAlignment="Center" Margin="328,313,307.2,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
+        <Button Content="Refinance Closing Disclosure" HorizontalAlignment="Center" Margin="328,352,307.2,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
+        <Image Margin="278,61,250.2,397" HorizontalAlignment="Center" Source="tvaccu-logo-header.png" Stretch="Uniform" Width="267"/>
 
 
     </Grid>

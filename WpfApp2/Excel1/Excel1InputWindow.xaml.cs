@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using Microsoft.Win32;
 
 namespace WpfApp2.Excel1
 {
@@ -94,5 +96,15 @@ namespace WpfApp2.Excel1
         {
 
         }
+
+        private void InputData_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.ShowDialog();
+
+        }
+
+        
+        
     }
 }
