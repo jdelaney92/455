@@ -76,9 +76,13 @@ namespace WpfApp2.Excel1
                 loanIDOutput.Content = loanID.Text;
             }
 
-            if (rateLockYes.IsChecked == true)
+            if (date.Text.Length != 0)
             {
-                //rateLockDateOutput.Content = need to do date addition here. According to excel sheet it is date issued + 45 days
+                //works when date is first set. Won't update if date is changed
+                DateTime datePickerText;
+                datePickerText = date.DisplayDate;
+                DateTime dateAdd = datePickerText.AddDays(45);
+                rateLockDateOutput.Content = dateAdd;
             }
 
             if (loanAmount.Text.Length != 0)
@@ -92,6 +96,7 @@ namespace WpfApp2.Excel1
             }
         }
 
+        // if you delete this it yells
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

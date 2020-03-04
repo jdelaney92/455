@@ -8,7 +8,7 @@
 
         WindowStyle="SingleBorderWindow"
         WindowState="Maximized"
-        Title="Loan Estimate">
+        Title="Loan Estimate" Height="966">
 
 
     <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -16,7 +16,7 @@
 
 
 
-        <TabControl SelectionChanged="TabControl_SelectionChanged" Height="1230">
+        <TabControl SelectionChanged="TabControl_SelectionChanged" Height="1230" RenderTransformOrigin="0.499,0.501">
             <TabItem Header="Input Form">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -155,10 +155,8 @@
                     <Label x:Name="purposeOutput" Content="-" HorizontalAlignment="Left" Margin="441,125,0,0" VerticalAlignment="Top" Width="180" Grid.Column="1"/>
                     <Label x:Name="loanIDOutput" Content="-" HorizontalAlignment="Left" Margin="441,218,0,0" VerticalAlignment="Top" Width="180" Grid.Column="1"/>
 
-                    <Label x:Name="untilBox" Content="until" HorizontalAlignment="Left" Margin="550,246,0,0" VerticalAlignment="Top" Width="41" Grid.Column="1"/>
-                    <Label x:Name="rateLockDateOutput" Content="-" HorizontalAlignment="Left" Margin="596,246,0,0" VerticalAlignment="Top" Width="83" IsEnabled="False" RenderTransformOrigin="0.494,0.5" Grid.Column="1"/>
-                    <RadioButton x:Name="rateLockYes" Content="Yes" HorizontalAlignment="Left" Margin="441,252,0,0" VerticalAlignment="Top" Width="42" Grid.Column="1"/>
-                    <RadioButton x:Name="rateLockNo" Content="No" HorizontalAlignment="Left" Margin="498,252,0,0" VerticalAlignment="Top" Width="47" Grid.Column="1"/>
+                    <Label x:Name="untilBox" Content="until" HorizontalAlignment="Left" Margin="487,246,0,0" VerticalAlignment="Top" Width="41" Grid.Column="1"/>
+                    <Label x:Name="rateLockDateOutput" Content="-" HorizontalAlignment="Left" Margin="538,246,0,0" VerticalAlignment="Top" Width="83" IsEnabled="False" RenderTransformOrigin="0.494,0.5" Grid.Column="1"/>
 
                     <Label Content="LOAN TERMS" HorizontalAlignment="Left" Margin="10,321,0,0" VerticalAlignment="Top" Width="268" FontWeight="Bold" FontSize="14" Grid.ColumnSpan="2"/>
                     <Label Content="Loan Amount" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold" Grid.ColumnSpan="2"/>
@@ -169,6 +167,23 @@
 
                     <Label x:Name="loanAmountOutput" Content="-" HorizontalAlignment="Left" Margin="121,355,0,0" VerticalAlignment="Top" Width="123" Grid.Column="1"/>
                     <Label x:Name="interestRateOutput" Content="-" HorizontalAlignment="Left" Margin="121,386,0,0" VerticalAlignment="Top" Width="123" Grid.Column="1"/>
+                    <Label Content="YES" Grid.Column="1" HorizontalAlignment="Left" Margin="441,246,0,0" VerticalAlignment="Top" Width="31" FontWeight="Bold"/>
+                    <Label Content="Monthly Prin and Int" HorizontalAlignment="Left" Margin="10,417,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="140" FontWeight="Bold"/>
+                    <Label x:Name="monthlyPrinIntOutput" Content="-" Grid.Column="1" HorizontalAlignment="Left" Margin="121,417,0,0" VerticalAlignment="Top" Width="123"/>
+                    <Label Content="YES" Grid.Column="1" HorizontalAlignment="Left" Margin="283,417,0,0" VerticalAlignment="Top" Width="77" FontWeight="Bold"/>
+                    <Label Content="Prepayment Penalty" HorizontalAlignment="Left" Margin="10,479,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="140"/>
+                    <Label Content="Does the loan have these features?" Grid.Column="1" HorizontalAlignment="Left" Margin="283,448,0,0" VerticalAlignment="Top" Width="245" FontSize="14"/>
+                    <Label Content="NO" Grid.Column="1" HorizontalAlignment="Left" Margin="283,479,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="Balloon Payment" HorizontalAlignment="Left" Margin="10,510,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="140"/>
+                    <Label Content="NO" Grid.Column="1" HorizontalAlignment="Left" Margin="283,510,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="PROJECTED PAYMENTS" HorizontalAlignment="Left" Margin="10,541,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="173" FontSize="14" FontWeight="Bold"/>
+                    <Label Content="Payment Calculation" HorizontalAlignment="Left" Margin="10,575,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="140"/>
+                    <Label Content="Years 1-5" Grid.Column="1" HorizontalAlignment="Left" Margin="148,575,0,0" VerticalAlignment="Top" Width="62"/>
+                    <Label Content="Years 6-10" Grid.Column="1" HorizontalAlignment="Left" Margin="215,575,0,0" VerticalAlignment="Top" Width="72"/>
+                    <Label Content="Years 11-15" Grid.Column="1" HorizontalAlignment="Left" Margin="292,575,0,0" VerticalAlignment="Top" Width="72"/>
+                    <Label Content="Years 16-20" Grid.Column="1" HorizontalAlignment="Left" Margin="369,575,0,0" VerticalAlignment="Top" Width="72"/>
+                    <Label Content="Years 21-25" Grid.Column="1" HorizontalAlignment="Left" Margin="446,575,0,0" VerticalAlignment="Top" Width="72"/>
+                    <Label Content="Years 26-30" Grid.Column="1" HorizontalAlignment="Left" Margin="523,575,0,0" VerticalAlignment="Top" Width="72"/>
                 </Grid>
             </TabItem>
         </TabControl>
