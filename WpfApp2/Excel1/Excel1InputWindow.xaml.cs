@@ -65,7 +65,7 @@ namespace WpfApp2.Excel1
                     loanTermOutput.Content = "in months";
                 }
             }
-
+            
             if (purpose.Text.Length != 0)
             {
                 purposeOutput.Content = purpose.Text;

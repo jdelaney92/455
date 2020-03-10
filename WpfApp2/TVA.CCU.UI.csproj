@@ -114,5 +114,10 @@
   <ItemGroup>
     <Resource Include="tva_circle_logo_OIw_icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Excel1\Controllers" />
+    <Folder Include="Excel1\models" />
+    <Folder Include="Excel1\views" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
