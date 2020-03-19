@@ -1,7 +1,8 @@
 ﻿using System.Windows;
-using WpfApp2.Excel1;
+using TVA_CCU.Excel1;
 
-namespace WpfApp2
+
+namespace TVA_CCU
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

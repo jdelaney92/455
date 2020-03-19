@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E2E34A55-2E6C-4F47-8EAC-00B4A7A12DC2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WpfApp2</RootNamespace>
-    <AssemblyName>WpfApp2</AssemblyName>
+    <RootNamespace>TVA_CCU</RootNamespace>
+    <AssemblyName>TVA_CCU</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -36,7 +36,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>tva_circle_logo_OIw_icon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -59,7 +60,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Excel1\Excel1InputWindow.xaml">
+    <Compile Include="LoanEstimateModels\output\ApplicantInformation.cs" />
+    <Compile Include="Services\ValidationService.cs" />
+    <Page Include="LoanEstimate\LoanEstimateWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -71,8 +74,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Excel1\Excel1InputWindow.xaml.cs">
-      <DependentUpon>Excel1InputWindow.xaml</DependentUpon>
+    <Compile Include="LoanEstimate\LoanEstimateWindow.xaml.cs">
+      <DependentUpon>LoanEstimateWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -80,6 +83,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoanEstimateModels\Services\ValidationDetail.cs" />
+    <Compile Include="LoanEstimateModels\input\BorrowerAndLoanInformation.cs" />
+    <Compile Include="LoanEstimateModels\input\LoanOfficerInformation.cs" />
+    <Compile Include="LoanEstimateModels\input\ClosingCostInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -106,18 +113,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\tvaccu-logo-header-1.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Image1.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="tvaccu-logo-header.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="tva_circle_logo_OIw_icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Excel1\Controllers" />
-    <Folder Include="Excel1\models" />
-    <Folder Include="Excel1\views" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
