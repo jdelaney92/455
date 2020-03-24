@@ -67,8 +67,9 @@
                             <Label Content="Property Being Mortgaged-City, State, Zip:" HorizontalAlignment="Left" Margin="20,160,0,0" VerticalAlignment="Top" Grid.Column="1" Height="29" Width="300"/>
                             <Label Content="Sale Price (if purchase)" HorizontalAlignment="Left" Margin="20,190,0,0" VerticalAlignment="Top" Grid.Column="1" Height="29" Width="160"/>
                             <Label Content="Loan Term:" HorizontalAlignment="Left" Margin="20,220,0,0" VerticalAlignment="Top" Width="87" Height="29"/>
-                  <!--          <Label Content="Select 'in months' for Construction Loan, else Select 'in years':" HorizontalAlignment="Left" Margin="20,250,0,0" VerticalAlignment="Top" Width="251" Height="29"/>
-                  -->       <RadioButton x:Name="inMonths" Content="In Months (for Construction Loan)" HorizontalAlignment="Left" Margin="80,260,0,0" VerticalAlignment="Top" Grid.Column="1" Height="18" Width="244"/>
+                            <!--          <Label Content="Select 'in months' for Construction Loan, else Select 'in years':" HorizontalAlignment="Left" Margin="20,250,0,0" VerticalAlignment="Top" Width="251" Height="29"/>
+                  -->
+                            <RadioButton x:Name="inMonths" Content="In Months (for Construction Loan)" HorizontalAlignment="Left" Margin="80,260,0,0" VerticalAlignment="Top" Grid.Column="1" Height="18" Width="244"/>
                             <RadioButton x:Name="inYears" Content="In Years" HorizontalAlignment="Left" Margin="380,260,0,0" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.22,0.867" Height="18" Width="70"/>
                             <Label Content="Purpose:" HorizontalAlignment="Left" Margin="20,290,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.464,0.615" Grid.Column="1" Height="29" Width="67"/>
                             <Label Content="Loan ID# (Member Number-Loan ID:" HorizontalAlignment="Left" Margin="20,320,0,0" VerticalAlignment="Top" Grid.Column="1" Height="29" Width="251"/>
@@ -259,7 +260,7 @@
                     -->
                     <Rectangle Grid.ColumnSpan="2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="517" Margin="271,130,0,0" Stroke="Black" VerticalAlignment="Top" Width="278"/>
                     <Label Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="353,130,0,0" VerticalAlignment="Top" Width="98" FontWeight="Bold" FontSize="16"/>
-                    <Border BorderBrush="#FF0A0404" BorderThickness="1" Grid.ColumnSpan="2" Margin="271,130,194,739">
+                    <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="39" Margin="271,130,0,0" VerticalAlignment="Top" Width="278">
                         <Label Content="Loan Costs" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
                     </Border>
                     <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="39" Margin="0,130,0,0" VerticalAlignment="Top" Width="266">
