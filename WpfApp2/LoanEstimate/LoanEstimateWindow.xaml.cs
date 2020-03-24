@@ -34,9 +34,11 @@ namespace TVA_CCU.Excel1
 
             try
             {
-                BorrowerAndLoanInformation data = MapInput_BorrowerInformation();
-                ValidationDetail validation = ValidationService.ValidateLoanInformation(data);
-                MapOutput_BorrowerInformation(data);
+                BorrowerAndLoanInformation borrowData = MapInput_BorrowerInformation();
+                ClosingCostInformation closingData = MapInput_ClosingInformation();
+                ValidationDetail validation = ValidationService.ValidateLoanInformation(borrowData);
+                MapOutput_BorrowerInformation(borrowData);
+                MapOutput_LoanCosts(closingData);
             }
             catch (Exception ex)
             {
@@ -98,8 +100,64 @@ namespace TVA_CCU.Excel1
             interestRateOutput.Content = obj.InterestRate;
             //estimatedTax_Insurance.Content = obj.EstimatedTaxesAndInsurance;
         }
+        private ClosingCostInformation MapInput_ClosingInformation()
+        {
+            return new ClosingCostInformation
+            {
+                OriginationFee = Int32.Parse(originationFee.Text),
+                ProcessingFee = Int32.Parse(processingFee.Text),
+                AppraisalFee = Int32.Parse(appraisalFee.Text),
+                CreditReportFee = Int32.Parse(creditReportFee.Text),
+                FloodDeterminationFee = Int32.Parse(floodDeterminationFee.Text),
+                LendersAttorneyFee = Int32.Parse(lendersAttorneyFee.Text),
+                TaxServiceFee = Int32.Parse(taxServiceFee.Text),
+                PestInspectionFee = Int32.Parse(pestInspectionFee.Text),
+                SurveyFee = Int32.Parse(surveyFee.Text),
+                TitleCourierFee = Int32.Parse(titleCourierFee.Text),
+                TitleLendersPolicy = Int32.Parse(titleLendersPolicy.Text),
+                TitleOwnersPolicy = Int32.Parse(titleOwnersPolicy.Text),
+                TitleSettlementAgent = Int32.Parse(titleSettlementAgent.Text),
+                TitleSearch = Int32.Parse(titleSearch.Text),
+                RecordingFees = Int32.Parse(recordingFees.Text),
+                TransferTaxes = Int32.Parse(transferTaxes.Text),
+                HomeownersInsurance = Int32.Parse(homeownersInsurance.Text),
+                MortgageInsurance = Int32.Parse(mortgageInsurance.Text),
+                PrepaidInterest = Int32.Parse(prepaidInterest.Text),
+                HoaFees = Int32.Parse(hoaFees.Text),
+                PropertyTaxes = Int32.Parse(propertyTaxes.Text),
+                DownpaymentFromBorrower = Int32.Parse(borrowerDownpayment.Text),
+                EarnestMoney = Int32.Parse(earnestMoney.Text),
+                SellerCreditForPurchase = Int32.Parse(sellerCredit.Text)
+            };
+        }
 
-        
+        private void MapOutput_LoanCosts(ClosingCostInformation obj)
+        {
+
+            int origCharges = obj.OriginationFee + obj.ProcessingFee;
+            int servYouCant = obj.AppraisalFee + obj.CreditReportFee + obj.FloodDeterminationFee
+                                               + obj.LendersAttorneyFee + obj.TaxServiceFee;
+            int servYouCan = obj.PestInspectionFee + obj.SurveyFee + obj.TitleCourierFee
+                                               + obj.TitleLendersPolicy + obj.TitleSettlementAgent + +obj.TitleSearch;
+            originationChargesOutput.Content = origCharges;
+            originationFeeOutput.Content = obj.OriginationFee;
+            processingFeeOutput.Content = obj.ProcessingFee;
+            serviceYouCantShopForOutput.Content = servYouCant;
+            appraisalFeeOutput.Content = obj.AppraisalFee;
+            creditReportFeeOutput.Content = obj.CreditReportFee;
+            floodDeterminationFeeOutput.Content = obj.FloodDeterminationFee;
+            lendersAttorneyFeeOutput.Content = obj.LendersAttorneyFee;
+            taxServiceFeeOutput.Content = obj.TaxServiceFee;
+            serviceYouCanShopForOutput.Content = servYouCan;
+            pestInspectionFeeOutput.Content = obj.PestInspectionFee;
+            surveyFeeOutput.Content = obj.SurveyFee;
+            titleCourierFeeOutput.Content = obj.TitleCourierFee;
+            titleLendersPolicyOutput.Content = obj.TitleLendersPolicy;
+            titleSettlementAgentOutput.Content = obj.TitleSettlementAgent;
+            titleSearchOutput.Content = obj.TitleSearch;
+            totalLoanCostsOutput.Content = origCharges + servYouCant + servYouCan;
+        }
+
         // if you delete this it yells
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

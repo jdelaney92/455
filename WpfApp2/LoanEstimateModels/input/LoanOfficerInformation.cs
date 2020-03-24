@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TVA_CCU.models.input
+namespace TVA_CCU.Models.input
 {
     class LoanOfficerInformation
     {

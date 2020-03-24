@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TVA_CCU.models
+namespace TVA_CCU.Models
 {
     class ClosingCostInformation
     {
@@ -21,16 +21,24 @@ namespace TVA_CCU.models
         public int LendersAttorneyFee { get; set; }
 
         public int TaxServiceFee { get; set; }
-
+         
+        public int PestInspectionFee { get; set; }
+        
+        public int SurveyFee { get; set; }
+        
         public int TitleCourierFee { get; set; }
 
         public int TitleLendersPolicy { get; set; }
+
+        public int TitleOwnersPolicy { get; set; }
 
         public int TitleSettlementAgent { get; set; }
 
         public int TitleSearch { get; set; }
 
         public int RecordingFees { get; set; }
+
+        public int TransferTaxes { get; set; }
 
         public int HomeownersInsurance { get; set; }
 
