@@ -39,11 +39,16 @@ namespace TVA_CCU.Excel1
                 ValidationDetail validation = ValidationService.ValidateLoanInformation(borrowData);
                 MapOutput_BorrowerInformation(borrowData);
                 MapOutput_LoanCosts(closingData);
+                MapOutput_ProjectedPayments(borrowData);
             }
             catch (Exception ex)
             {
                 var message = ex.Message;
+                MessageBox.Show(message,"Error");
+                
             }
+
+            
 
  
         }
@@ -59,7 +64,7 @@ namespace TVA_CCU.Excel1
                 PbmStreetAddress = propertyAddress.Text,
                 PbmCityStateZip = propertyC_S_Z.Text,
                 SalePrice = salePrice.Text,
-                LoanTerm = "",
+                LoanTerm = loanTerm.Text,
                 Purpose = purpose.Text,
                 LoanID = loanID.Text,
                 LoanAmount = loanAmount.Text,
@@ -96,9 +101,11 @@ namespace TVA_CCU.Excel1
             salePriceOutput.Content = obj.SalePrice;
             purposeOutput.Content = obj.Purpose;
             loanIDOutput.Content = obj.LoanID;
+            //estimatedTax_Insurance.Content = obj.EstimatedTaxesAndInsurance;
             loanAmountOutput.Content = obj.LoanAmount;
             interestRateOutput.Content = obj.InterestRate;
-            //estimatedTax_Insurance.Content = obj.EstimatedTaxesAndInsurance;
+            monthlyPrincipleOutput.Content = PaymentCalculation(Convert.ToDouble(obj.LoanAmount), Convert.ToDouble(obj.InterestRate), Convert.ToInt32(obj.LoanTerm));
+
         }
         private ClosingCostInformation MapInput_ClosingInformation()
         {
@@ -158,6 +165,17 @@ namespace TVA_CCU.Excel1
             totalLoanCostsOutput.Content = origCharges + servYouCant + servYouCan;
         }
 
+        private void MapOutput_ProjectedPayments(BorrowerAndLoanInformation obj)
+        {
+            minYearOne.Content = PaymentCalculation(Convert.ToDouble(obj.LoanAmount), Convert.ToDouble(obj.InterestRate), Convert.ToInt32(obj.LoanTerm));
+            minYearSix.Content = PaymentCalculation(Convert.ToDouble(obj.LoanAmount), Convert.ToDouble(obj.InterestRate), Convert.ToInt32(obj.LoanTerm));
+            minYearEleven.Content = PaymentCalculation(Convert.ToDouble(obj.LoanAmount), Convert.ToDouble(obj.InterestRate), Convert.ToInt32(obj.LoanTerm));
+            minYearEnd.Content = PaymentCalculation(Convert.ToDouble(obj.LoanAmount), Convert.ToDouble(obj.InterestRate), Convert.ToInt32(obj.LoanTerm));
+            maxYearSix.Content = PaymentCalculation(Convert.ToDouble(obj.LoanAmount), Convert.ToDouble(obj.InterestRate+2), Convert.ToInt32(obj.LoanTerm));
+            maxYearEleven.Content = PaymentCalculation(Convert.ToDouble(obj.LoanAmount), Convert.ToDouble(obj.InterestRate+4), Convert.ToInt32(obj.LoanTerm));
+            maxYearEnd.Content = PaymentCalculation(Convert.ToDouble(obj.LoanAmount), Convert.ToDouble(obj.InterestRate+6), Convert.ToInt32(obj.LoanTerm));
+        }
+
         // if you delete this it yells
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -169,6 +187,17 @@ namespace TVA_CCU.Excel1
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.ShowDialog();
+
+        }
+
+        //calculates the amount owed per month of a loan
+        //takes in the amount of the loan left to pay, the current interest rate, and the term left of the loan
+        private double PaymentCalculation(double amount, double interest, int term)
+        {
+            interest = (interest / 100) / 12;
+            double power = (-1 * term * 12);
+            double payment = Math.Round((amount * interest) / (1 - (Math.Pow(interest+1, power))),2);
+            return payment;
 
         }
 

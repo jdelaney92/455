@@ -11,7 +11,11 @@
     Title="TVA Community Credit Union" Background="#FF0B0F61">
 
     <Grid>
-        <Image Margin="275,86,270,0" Source="Images/tvaccu-logo-header-1.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="212">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="15*"/>
+        </Grid.ColumnDefinitions>
+        <Image Margin="116.284,86,272,0" Source="Images/tvaccu-logo-header-1.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="212" Grid.Column="1">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -21,10 +25,10 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Button Content="Loan Estimate" HorizontalAlignment="Center" Margin="309,273,290,0" VerticalAlignment="Top" Width="161" Click="Button_Click"/>
-        <Button Content="Purchase Closing Disclosure" HorizontalAlignment="Center" Margin="310,311,290,0" VerticalAlignment="Top" Width="160" Click="Button_Click" IsEnabled="False"/>
-        <Button Content="Refinance Closing Disclosure" HorizontalAlignment="Center" Margin="310,349,290,0" VerticalAlignment="Top" Width="160" Click="Button_Click" IsEnabled="False"/>
-        
+        <Button Content="Loan Estimate" HorizontalAlignment="Center" Margin="149.284,273,290,0" VerticalAlignment="Top" Width="161" Click="Button_Click" Grid.Column="1"/>
+        <Button Content="Purchase Closing Disclosure" HorizontalAlignment="Center" Margin="150.284,311,290,0" VerticalAlignment="Top" Width="160" Click="Button_Click" IsEnabled="False" Grid.Column="1"/>
+        <Button Content="Refinance Closing Disclosure" HorizontalAlignment="Center" Margin="150.284,349,290,0" VerticalAlignment="Top" Width="160" Click="Button_Click" IsEnabled="False" Grid.Column="1"/>
+
     </Grid>
-    
+
 </Window>
