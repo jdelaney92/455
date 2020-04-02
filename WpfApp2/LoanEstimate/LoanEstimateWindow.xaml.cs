@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using System.Windows.Navigation;
 using Microsoft.Win32;
 using TVA_CCU.Models;
 
@@ -38,6 +39,7 @@ namespace TVA_CCU.Excel1
                 ClosingCostInformation closingData = MapInput_ClosingInformation();
                 ValidationDetail validation = ValidationService.ValidateLoanInformation(borrowData);
                 MapOutput_BorrowerInformation(borrowData);
+                MapOutput_loanSchedule(borrowData);
                 MapOutput_LoanCosts(closingData);
                 MapOutput_ProjectedPayments(borrowData);
             }
@@ -54,10 +56,11 @@ namespace TVA_CCU.Excel1
         }
 
         private BorrowerAndLoanInformation MapInput_BorrowerInformation()
-        {       
+        {
             return new BorrowerAndLoanInformation
             {
                 Date = date.Text,
+                Date2 = date.SelectedDate??DateTime.Now,
                 ApplicantName = applicantName.Text,
                 ApplicantStreetAddress = applicantStreetAddress.Text,
                 ApplicantCityStateZip = applicantC_S_Z.Text,
@@ -176,6 +179,24 @@ namespace TVA_CCU.Excel1
             maxYearEnd.Content = PaymentCalculation(Convert.ToDouble(obj.LoanAmount), Convert.ToDouble(obj.InterestRate+6), Convert.ToInt32(obj.LoanTerm));
         }
 
+
+        private void MapOutput_loanSchedule(BorrowerAndLoanInformation obj)
+        {
+            int periods, loanTerm, num_pay = 12;
+            decimal balance, rate;
+            var date = obj.Date2;
+
+            int.TryParse(obj.LoanTerm, out loanTerm);
+            decimal.TryParse(obj.LoanAmount, out balance);
+            decimal.TryParse(obj.InterestRate, out rate);
+
+
+            periods = loanTerm * num_pay;
+
+            var loan = new LoanSchedule(balance, periods, rate, date, 12 / num_pay) as LoanSchedule;
+            loanGrid.ItemsSource = loan.list;
+        }
+
         // if you delete this it yells
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -201,7 +222,25 @@ namespace TVA_CCU.Excel1
 
         }
 
-        
-        
+    }
+    public class ColorConvert : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter,
+            System.Globalization.CultureInfo culture)
+        {
+            var item = value as ListViewItem;
+
+            var view = ItemsControl.ItemsControlFromItemContainer(item) as ListView;
+
+            var index = view.ItemContainerGenerator.IndexFromContainer(item);
+
+            if (index % 2 == 0) return Brushes.White;
+            else return Brushes.Green;
+        }
+        public object ConvertBack(object value, Type targetType, object parameter,
+            System.Globalization.CultureInfo culture)
+        {
+            return null;
+        }
     }
 }
