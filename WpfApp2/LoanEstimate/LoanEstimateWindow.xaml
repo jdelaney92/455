@@ -7,8 +7,22 @@
         mc:Ignorable="d"
 
         WindowStyle="SingleBorderWindow"
-        Title="Loan Estimate" Height="966">
-
+        Title="Loan Estimate" Height="966" Width="857.6">
+    
+    <!--
+           Color Converter
+                    -->
+    <Window.Resources>
+        <local:ColorConvert x:Key="myConvert"/>
+        <Style x:Key="item" TargetType="{x:Type ListViewItem}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <Binding RelativeSource="{RelativeSource Self}"
+                             Converter="{StaticResource myConvert}"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
 
     <ScrollViewer VerticalScrollBarVisibility="Auto">
 
@@ -389,6 +403,46 @@
 
 
 
+
+                </Grid>
+            </TabItem>
+    
+
+            <!--
+           Loan Schedule
+                    -->
+            <TabItem Header="Payment Schedule">
+                <Grid>
+
+                    <ListView  Height="761" HorizontalAlignment="Left" Margin="0,151,0,0" Name="loanGrid" VerticalAlignment="Top" Width="1010">
+
+                        <ListView.View>
+
+                            <GridView>
+
+                                <GridView.Columns>
+
+                                    <GridViewColumn Header="Pmt No."  DisplayMemberBinding="{Binding ID}"/>
+                                    <GridViewColumn Header="Payment Date" DisplayMemberBinding="{Binding Date}"/>
+                                    <GridViewColumn Header="Beginning Balance" DisplayMemberBinding="{Binding startBalance}"/>
+                                    <GridViewColumn Header="Scheduled Payment" DisplayMemberBinding="{Binding payment}"/>
+                                    <GridViewColumn Header="Extra Payment" DisplayMemberBinding="{Binding extraPayment}"/>
+                                    <GridViewColumn Header="Totoal Payment" DisplayMemberBinding="{Binding totalPayment}"/>
+                                    <GridViewColumn Header="Principal" DisplayMemberBinding="{Binding principal}"/>
+                                    <GridViewColumn Header="Interest" DisplayMemberBinding="{Binding interest}"/>
+                                    <GridViewColumn Header="Ending Balance" DisplayMemberBinding="{Binding endBalance}"/>
+                                    <GridViewColumn Header="Cumulative Interest" DisplayMemberBinding="{Binding totalInterest}"/>
+
+
+
+
+                                </GridView.Columns>
+
+                            </GridView>
+
+                        </ListView.View>
+
+                    </ListView>
 
                 </Grid>
             </TabItem>

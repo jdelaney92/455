@@ -10,6 +10,8 @@ namespace TVA_CCU.Models
     {
         public string Date { get; set; }
 
+        public DateTime Date2 { get; set; }
+
         public string ApplicantName { get; set; }
 
         public string ApplicantStreetAddress { get; set; }

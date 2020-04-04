@@ -60,6 +60,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LoanEstimateModels\Loan Schedule\LoanSchedule.cs" />
     <Compile Include="LoanEstimateModels\output\ApplicantInformation.cs" />
     <Compile Include="Services\ValidationService.cs" />
     <Page Include="LoanEstimate\LoanEstimateWindow.xaml">
