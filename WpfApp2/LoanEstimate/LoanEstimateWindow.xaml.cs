@@ -17,6 +17,8 @@ using Microsoft.Win32;
 using TVA_CCU.Models;
 
 
+
+
 namespace TVA_CCU.Excel1
 {
     /// <summary>
@@ -46,13 +48,8 @@ namespace TVA_CCU.Excel1
             catch (Exception ex)
             {
                 var message = ex.Message;
-                MessageBox.Show(message,"Error");
-                
+                MessageBox.Show(message,"Error"); 
             }
-
-            
-
- 
         }
 
         private BorrowerAndLoanInformation MapInput_BorrowerInformation()
@@ -104,6 +101,9 @@ namespace TVA_CCU.Excel1
             salePriceOutput.Content = obj.SalePrice;
             purposeOutput.Content = obj.Purpose;
             loanIDOutput.Content = obj.LoanID;
+            loanIDOutput2.Content = obj.LoanID;
+            rateLockDateOutput.Content = obj.Date;
+            expireDateOutput.Content = obj.Date;
             //estimatedTax_Insurance.Content = obj.EstimatedTaxesAndInsurance;
             loanAmountOutput.Content = obj.LoanAmount;
             interestRateOutput.Content = obj.InterestRate;
@@ -203,12 +203,20 @@ namespace TVA_CCU.Excel1
 
         }
         
-
+        //function for importing file
         private void InputData_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.ShowDialog();
 
+        }
+
+        //function for exporting file
+        private void ExportData_Click(object sender, RoutedEventArgs e)
+        {
+            TextWriter txt = new StreamWriter("C:\\test\\test.txt");
+            //txt.Write();
+            txt.Close();
         }
 
         //calculates the amount owed per month of a loan
@@ -222,6 +230,20 @@ namespace TVA_CCU.Excel1
 
         }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged_2(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
     public class ColorConvert : IValueConverter
     {
