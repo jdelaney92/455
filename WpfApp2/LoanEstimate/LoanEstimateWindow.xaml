@@ -8,21 +8,9 @@
 
         WindowStyle="SingleBorderWindow"
         Title="Loan Estimate" Height="1376" Width="1005.6">
-
-    <!--
-           Color Converter
-                    -->
-    <Window.Resources>
-        <local:ColorConvert x:Key="myConvert"/>
-        <Style x:Key="item" TargetType="{x:Type ListViewItem}">
-            <Setter Property="Background">
-                <Setter.Value>
-                    <Binding RelativeSource="{RelativeSource Self}"
-                             Converter="{StaticResource myConvert}"/>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
+    
+    
+ 
 
 
     <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,0,-86">
@@ -280,9 +268,9 @@
 
 
                     <Label Content="Rate Lock:" HorizontalAlignment="Left" Margin="0,498,0,0" VerticalAlignment="Top" Width="79" FontWeight="Bold" RenderTransformOrigin="0.544,0.269" Height="26"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="79,503,0,0" TextWrapping="Wrap" Text="YES, until-" VerticalAlignment="Top" Width="62" TextChanged="TextBox_TextChanged_2"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="79,503,0,0" TextWrapping="Wrap" Text="YES, until-" VerticalAlignment="Top" Width="62"/>
                     <Label x:Name="rateLockDateOutput" HorizontalAlignment="Left" Margin="157,503,0,0" VerticalAlignment="Top" Width="95" Height="26"/>
-                    <TextBox HorizontalAlignment="Left" Height="73" Margin="22,531,0,0" TextWrapping="Wrap" Text="Before closing, your interest rate, points, and credits can change unless you lock the interest rate. All other estimated closing costs expire on:" VerticalAlignment="Top" Width="219" TextChanged="TextBox_TextChanged_2"/>
+                    <TextBox HorizontalAlignment="Left" Height="73" Margin="22,531,0,0" TextWrapping="Wrap" Text="Before closing, your interest rate, points, and credits can change unless you lock the interest rate. All other estimated closing costs expire on:" VerticalAlignment="Top" Width="219"/>
                     <Label x:Name="expireDateOutput" HorizontalAlignment="Left" Margin="157,609,0,0" VerticalAlignment="Top" Width="95" Height="26"/>
 
                     <!--
@@ -398,16 +386,16 @@
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Margin="274,755,0,0" Stroke="Black" VerticalAlignment="Top" Width="288"/>
                     <TextBox HorizontalAlignment="Left" Margin="279,727,0,635" TextWrapping="Wrap" Text="NO" Width="39" RenderTransformOrigin="-0.5,0.217"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="279,760,0,0" TextWrapping="Wrap" Text="YES" VerticalAlignment="Top" Width="39"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="328,760,0,0" TextWrapping="Wrap" Text="*Adjust every 5 years starting in year 6" VerticalAlignment="Top" Width="226" TextChanged="TextBox_TextChanged"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="328,760,0,0" TextWrapping="Wrap" Text="*Adjust every 5 years starting in year 6" VerticalAlignment="Top" Width="226"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="279,790,0,0" TextWrapping="Wrap" Text="*Can go as high as:" VerticalAlignment="Top" Width="129"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="491,790,440,0" TextWrapping="Wrap" Text="in years 15" VerticalAlignment="Top" Width="67"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="279,818,0,0" TextWrapping="Wrap" Text="*See AIR Table for details" VerticalAlignment="Top" Width="222" TextChanged="TextBox_TextChanged_1"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="279,818,0,0" TextWrapping="Wrap" Text="*See AIR Table for details" VerticalAlignment="Top" Width="222"/>
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="88" Margin="274,845,0,0" Stroke="Black" VerticalAlignment="Top" Width="288"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="279,850,0,0" TextWrapping="Wrap" Text="YES" VerticalAlignment="Top" Width="39"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="328,850,0,0" TextWrapping="Wrap" Text="*Adjust every 5 years starting in year 6" VerticalAlignment="Top" Width="222" TextChanged="TextBox_TextChanged"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="328,850,0,0" TextWrapping="Wrap" Text="*Adjust every 5 years starting in year 6" VerticalAlignment="Top" Width="222"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="279,878,0,0" TextWrapping="Wrap" Text="*Can go as high as:" VerticalAlignment="Top" Width="129"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="492,878,0,0" TextWrapping="Wrap" Text="in years 15" VerticalAlignment="Top" Width="66"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="279,906,0,0" TextWrapping="Wrap" Text="*See AP Table for details" VerticalAlignment="Top" Width="222" TextChanged="TextBox_TextChanged_1"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="279,906,0,0" TextWrapping="Wrap" Text="*See AP Table for details" VerticalAlignment="Top" Width="222"/>
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="35" Margin="0,933,0,0" Stroke="Black" VerticalAlignment="Top" Width="274"/>
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="35" Margin="274,933,0,0" Stroke="Black" VerticalAlignment="Top" Width="288"/>
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="35" Margin="0,968,0,0" Stroke="Black" VerticalAlignment="Top" Width="274"/>
@@ -519,13 +507,77 @@
             </TabItem>
 
 
+      
+
+
             <!--
            Loan Schedule
                     -->
             <TabItem Header="Payment Schedule">
                 <Grid>
+                    <StackPanel x:Name="LoanInf" Orientation="Vertical" Margin="10,10,683.6,1204">
 
-                    <ListView  Height="761" HorizontalAlignment="Left" Margin="0,151,0,0" Name="loanGrid" VerticalAlignment="Top" Width="1010">
+                        <WrapPanel>
+                            <Label Width="110">Loan Amount:</Label>
+                            <Label Name="L_amount" Content="{Binding AmountValue}" Width="137"></Label>
+                        </WrapPanel>
+
+                        <WrapPanel>
+                            <Label Width="110">Interest Rate:</Label>
+                            <Label Name="InterestRate" Content="{Binding InterestRate}" Width="137"></Label>
+                        </WrapPanel>
+
+                        <WrapPanel>
+                            <Label Width="110">Loan Terms:</Label>
+                            <Label Name="L_term" Content="{Binding LoanTerm}" Width="137"></Label>
+                        </WrapPanel>
+                        <WrapPanel>
+                            <Label Width="110">Number of payments:</Label>
+                            <Label Name="NumPay" Content="{Binding NumPay}" Width="137"></Label>
+                        </WrapPanel>
+
+                        <WrapPanel>
+                            <Label Width="110">Start Date:</Label>
+                            <Label Name="Startdate" Content="{Binding StartDate}" Width="156"></Label>
+                        </WrapPanel>
+
+                        <WrapPanel>
+                            <Label Width="93" Height="34">Extra Payments:</Label>
+                            <TextBox Name="ExtraPayment" Width="161" Text="0" Height="20"/>
+                        </WrapPanel>
+
+                        <Button x:Name="ChangeExtraPay" Content="Change Extra Payment" Click="ExtraPay_Change"  HorizontalAlignment="Center" Margin="0,0,25,0" Width="275"/>
+
+                    </StackPanel>
+
+                    <StackPanel Name="Loan_Summary" Grid.Column="0" Orientation="Vertical" Margin="356,0,99.6,1254">
+                        <Button HorizontalAlignment="Center" Width="518" Margin="10,0,9.6,0">Export</Button>
+                        <Label HorizontalAlignment="Center" FontWeight="Bold">Loan Summary</Label>
+
+                        <WrapPanel>
+                            <Label Width="180">Scheduled payment :</Label>
+                            <Label Name="Scheduledpay" Content="{Binding Scheduledpay}" Width="169"></Label>
+                        </WrapPanel>
+
+                        <WrapPanel>
+                            <Label Width="180">Scheduled number of payments :</Label>
+                            <Label Name="ScheNumPay" Content="{Binding ScheNumPay}" Width="156"></Label>
+                        </WrapPanel>
+
+                        <WrapPanel>
+                            <Label Width="180">Actual number of payments :</Label>
+                            <Label Name="AcutalPay" Content="{Binding ActualPay}" Width="156"></Label>
+                        </WrapPanel>
+
+                        <WrapPanel>
+                            <Label Width="180">Total interest :</Label>
+                            <Label Name="TotalInterest" Content="{Binding TotalInterest}" Width="156"></Label>
+                        </WrapPanel>
+
+                    </StackPanel>
+
+
+                    <ListView  Height="644" HorizontalAlignment="Left" Margin="0,201,0,0" Name="loanGrid" VerticalAlignment="Top" Width="984">
 
                         <ListView.View>
 
@@ -539,12 +591,10 @@
                                     <GridViewColumn Header="Scheduled Payment" DisplayMemberBinding="{Binding payment}"/>
                                     <GridViewColumn Header="Extra Payment" DisplayMemberBinding="{Binding extraPayment}"/>
                                     <GridViewColumn Header="Totoal Payment" DisplayMemberBinding="{Binding totalPayment}"/>
-                                    <GridViewColumn Header="Principal" DisplayMemberBinding="{Binding principal}"/>
-                                    <GridViewColumn Header="Interest" DisplayMemberBinding="{Binding interest}"/>
+                                    <GridViewColumn Width="60" Header="Principal" DisplayMemberBinding="{Binding principal}"/>
+                                    <GridViewColumn Width="60" Header="Interest" DisplayMemberBinding="{Binding Interest}"/>
                                     <GridViewColumn Header="Ending Balance" DisplayMemberBinding="{Binding endBalance}"/>
                                     <GridViewColumn Header="Cumulative Interest" DisplayMemberBinding="{Binding totalInterest}"/>
-
-
 
 
                                 </GridView.Columns>

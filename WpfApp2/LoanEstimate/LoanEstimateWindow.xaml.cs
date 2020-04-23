@@ -41,7 +41,7 @@ namespace TVA_CCU.Excel1
                 ClosingCostInformation closingData = MapInput_ClosingInformation();
                 ValidationDetail validation = ValidationService.ValidateLoanInformation(borrowData);
                 MapOutput_BorrowerInformation(borrowData);
-                MapOutput_loanSchedule(borrowData);
+                MapOutput_loanSchedule();
                 MapOutput_LoanCosts(closingData);
                 MapOutput_ProjectedPayments(borrowData);
             }
@@ -180,21 +180,25 @@ namespace TVA_CCU.Excel1
         }
 
 
-        private void MapOutput_loanSchedule(BorrowerAndLoanInformation obj)
+        private void MapOutput_loanSchedule()
         {
-            int periods, loanTerm, num_pay = 12;
-            decimal balance, rate;
-            var date = obj.Date2;
+            int periods, LoanTerm, num_pay = 12;
+            decimal balance, rate, extraPay;
+            var Date = date.SelectedDate ?? DateTime.Now;
 
-            int.TryParse(obj.LoanTerm, out loanTerm);
-            decimal.TryParse(obj.LoanAmount, out balance);
-            decimal.TryParse(obj.InterestRate, out rate);
+            int.TryParse(loanTerm.Text, out LoanTerm);
+            decimal.TryParse(loanAmount.Text, out balance);
+            decimal.TryParse(interestRate.Text, out rate);
+            decimal.TryParse(ExtraPayment.Text, out extraPay);
 
 
-            periods = loanTerm * num_pay;
+            periods = LoanTerm * num_pay;
 
-            var loan = new LoanSchedule(balance, periods, rate, date, 12 / num_pay) as LoanSchedule;
+            var loan = new LoanSchedule(balance, extraPay, periods, rate, Date, 12 / num_pay) as LoanSchedule;
             loanGrid.ItemsSource = loan.list;
+            Loan_Summary.DataContext = loan.list2;
+            LoanInf.DataContext = loan.list1;
+
         }
 
         // if you delete this it yells
@@ -229,40 +233,12 @@ namespace TVA_CCU.Excel1
             return payment;
 
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        
+        private void ExtraPay_Change(object sender, RoutedEventArgs e)
         {
-
+            MapOutput_loanSchedule();
         }
 
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged_2(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
-    public class ColorConvert : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter,
-            System.Globalization.CultureInfo culture)
-        {
-            var item = value as ListViewItem;
-
-            var view = ItemsControl.ItemsControlFromItemContainer(item) as ListView;
-
-            var index = view.ItemContainerGenerator.IndexFromContainer(item);
-
-            if (index % 2 == 0) return Brushes.White;
-            else return Brushes.Green;
-        }
-        public object ConvertBack(object value, Type targetType, object parameter,
-            System.Globalization.CultureInfo culture)
-        {
-            return null;
-        }
-    }
+   
 }
