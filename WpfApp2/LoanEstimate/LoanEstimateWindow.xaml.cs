@@ -44,6 +44,7 @@ namespace TVA_CCU.Excel1
                 MapOutput_loanSchedule();
                 MapOutput_LoanCosts(closingData);
                 MapOutput_ProjectedPayments(borrowData);
+                MapOutput_APTable(borrowData);
             }
             catch (Exception ex)
             {
@@ -80,11 +81,11 @@ namespace TVA_CCU.Excel1
 
                 if (inYears.IsChecked == true)
                 {
-                    loanTermOutput.Content = "in years";
+                    loanTermOutput.Content = loanTerm.Text + " years";
                 }
                 else if (inMonths.IsChecked == true)
                 {
-                    loanTermOutput.Content = "in months";
+                    loanTermOutput.Content = loanTerm.Text + " months";
                 }
             }
             else
@@ -102,13 +103,15 @@ namespace TVA_CCU.Excel1
             purposeOutput.Content = obj.Purpose;
             loanIDOutput.Content = obj.LoanID;
             loanIDOutput2.Content = obj.LoanID;
-            rateLockDateOutput.Content = obj.Date;
-            expireDateOutput.Content = obj.Date;
+            DateTime date2 = date.SelectedDate ?? DateTime.Now;
+            rateLockDateOutput.Content = date2.AddDays(45);
+            expireDateOutput.Content = date2.AddDays(15);
             //estimatedTax_Insurance.Content = obj.EstimatedTaxesAndInsurance;
             loanAmountOutput.Content = obj.LoanAmount;
             interestRateOutput.Content = obj.InterestRate;
             monthlyPrincipleOutput.Content = PaymentCalculation(Convert.ToDouble(obj.LoanAmount), Convert.ToDouble(obj.InterestRate), Convert.ToInt32(obj.LoanTerm));
-
+            loanTermsMax.Content = PaymentCalculation(Convert.ToDouble(obj.LoanAmount), Convert.ToDouble(obj.InterestRate + 6), Convert.ToInt32(obj.LoanTerm));
+            maxInterest.Content = Convert.ToDouble(obj.InterestRate) + 6 + "%";
         }
         private ClosingCostInformation MapInput_ClosingInformation()
         {
@@ -179,6 +182,11 @@ namespace TVA_CCU.Excel1
             maxYearEnd.Content = PaymentCalculation(Convert.ToDouble(obj.LoanAmount), Convert.ToDouble(obj.InterestRate+6), Convert.ToInt32(obj.LoanTerm));
         }
 
+        private void MapOutput_APTable(BorrowerAndLoanInformation obj)
+        {
+            firstChange.Content = PaymentCalculation(Convert.ToDouble(obj.LoanAmount), Convert.ToDouble(obj.InterestRate + 2), Convert.ToInt32(obj.LoanTerm));
+            maxPayment.Content = PaymentCalculation(Convert.ToDouble(obj.LoanAmount), Convert.ToDouble(obj.InterestRate + 6), Convert.ToInt32(obj.LoanTerm));
+        }
 
         private void MapOutput_loanSchedule()
         {
@@ -227,18 +235,26 @@ namespace TVA_CCU.Excel1
         //takes in the amount of the loan left to pay, the current interest rate, and the term left of the loan
         private double PaymentCalculation(double amount, double interest, int term)
         {
-            interest = (interest / 100) / 12;
-            double power = (-1 * term * 12);
-            double payment = Math.Round((amount * interest) / (1 - (Math.Pow(interest+1, power))),2);
-            return payment;
-
+            if (inYears.IsChecked == true)
+            {
+                interest = (interest / 100) / 12;
+                double power = (-1 * term * 12);
+                double payment = Math.Round((amount * interest) / (1 - (Math.Pow(interest + 1, power))), 2);
+                return payment;
+            }
+            else
+            {
+                interest = (interest / 100);
+                double power = (-1 * term);
+                double payment = Math.Round((amount * interest) / (1 - (Math.Pow(interest + 1, power))), 2);
+                return payment;
+            }
         }
         
         private void ExtraPay_Change(object sender, RoutedEventArgs e)
         {
             MapOutput_loanSchedule();
         }
-
     }
    
 }
