@@ -78,7 +78,8 @@
                             <Label Content="Loan ID# (Member Number-Loan ID:" HorizontalAlignment="Left" Margin="20,320,0,0" VerticalAlignment="Top" Grid.Column="1" Height="29" Width="251"/>
                             <Label Content="Loan Amount:" HorizontalAlignment="Left" Margin="20,350,0,0" VerticalAlignment="Top" Grid.Column="1" Height="29" Width="103"/>
                             <Label Content="Interest Rate:" HorizontalAlignment="Left" Margin="20,380,0,0" VerticalAlignment="Top" Grid.Column="1" Height="29" Width="98"/>
-                            <Label Content="Estimated Taxes and Insurance (monthly):" HorizontalAlignment="Left" Margin="20,410,0,0" VerticalAlignment="Top" Grid.Column="1" Height="29" Width="284"/>
+                            <Label Content="Margin (if variable rate):" HorizontalAlignment="Left" Margin="20,410,0,0" VerticalAlignment="Top" Height="29" Width="176"/>
+                            <Label Content="Estimated Taxes and Insurance (monthly):" HorizontalAlignment="Left" Margin="20,440,0,0" VerticalAlignment="Top" Height="29" Width="284"/>
 
                             <!--
                                 Borrower and Loan Information Input Fields
@@ -95,8 +96,8 @@
                             <TextBox x:Name="loanID" HorizontalAlignment="Left" Height="23" Margin="320,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="1"/>
                             <TextBox x:Name="loanAmount" HorizontalAlignment="Left" Height="23" Margin="320,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="1" Text="0"/>
                             <TextBox x:Name="interestRate" HorizontalAlignment="Left" Height="23" Margin="320,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="1" Text="0"/>
-                            <TextBox x:Name="estimatedTax_Insurance" HorizontalAlignment="Left" Height="23" Margin="320,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Grid.Column="1"/>
-
+                            <TextBox x:Name="estimatedTax_Insurance" HorizontalAlignment="Left" Height="23" Margin="320,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+                            <TextBox x:Name="margin" HorizontalAlignment="Left" Height="23" Margin="320,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Text="0"/>
                         </Grid>
                     </Expander>
 
@@ -475,6 +476,11 @@
                     <Label Content="Seller Credits" HorizontalAlignment="Left" Margin="567,564,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
                     <Label Content="Adjustments/Credits" HorizontalAlignment="Left" Margin="567,590,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
                     <Label Content="Estimated Cash to Close" HorizontalAlignment="Left" Margin="567,617,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
+
+
+                    <!--
+                        Adjustable Interest Rate (AIR) Table
+                    -->
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="567,676,0,0" VerticalAlignment="Top" Width="289">
                         <Label Content="Adjustable Interest Rate (AIR) Table" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="0,3,-15,3" Width="287"/>
                     </Border>
@@ -488,15 +494,10 @@
                     <Label Content="Limits on Interest Rate Changes" HorizontalAlignment="Left" Margin="567,867,0,0" VerticalAlignment="Top" Width="198" Height="26" RenderTransformOrigin="0.529,0.346" FontWeight="Bold"/>
                     <Label Content="First Change" HorizontalAlignment="Left" Margin="567,893,0,0" VerticalAlignment="Top" Width="146" Height="26" RenderTransformOrigin="0.5,0.5"/>
                     <Label Content="Subsequent Changes" HorizontalAlignment="Left" Margin="567,920,0,0" VerticalAlignment="Top" Width="138" Height="26" RenderTransformOrigin="0.529,0.346"/>
-
-
-
-
-
-                    <!--
-                        Adjustable Interest Rate (AIR) Table
-                    -->
-
+                    <Label x:Name="indexMarginOutput" HorizontalAlignment="Left" Margin="798,715,0,0" VerticalAlignment="Top" Width="58" Height="26" Content=""/>
+                    <Label x:Name="initialRateOutput" HorizontalAlignment="Left" Margin="798,741,0,0" VerticalAlignment="Top" Width="58" Height="26" Content=""/>
+                    <Label x:Name="minInterestRateOutput" HorizontalAlignment="Left" Margin="728,767,0,0" VerticalAlignment="Top" Width="58" Height="26" Content=""/>
+                    <Label x:Name="maxInterestRateOutput" HorizontalAlignment="Left" Margin="798,767,0,0" VerticalAlignment="Top" Width="58" Height="26" Content=""/>
 
 
 

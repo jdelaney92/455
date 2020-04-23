@@ -45,6 +45,7 @@ namespace TVA_CCU.Excel1
                 MapOutput_LoanCosts(closingData);
                 MapOutput_ProjectedPayments(borrowData);
                 MapOutput_APTable(borrowData);
+                MapOuput_AIRTable(borrowData);
             }
             catch (Exception ex)
             {
@@ -58,7 +59,7 @@ namespace TVA_CCU.Excel1
             return new BorrowerAndLoanInformation
             {
                 Date = date.Text,
-                Date2 = date.SelectedDate??DateTime.Now,
+                Date2 = date.SelectedDate ?? DateTime.Now,
                 ApplicantName = applicantName.Text,
                 ApplicantStreetAddress = applicantStreetAddress.Text,
                 ApplicantCityStateZip = applicantC_S_Z.Text,
@@ -70,6 +71,7 @@ namespace TVA_CCU.Excel1
                 LoanID = loanID.Text,
                 LoanAmount = loanAmount.Text,
                 InterestRate = interestRate.Text,
+                Margin = margin.Text,
                 EstimatedTaxesAndInsurance = estimatedTax_Insurance.Text
             };       
         }
@@ -207,6 +209,13 @@ namespace TVA_CCU.Excel1
             Loan_Summary.DataContext = loan.list2;
             LoanInf.DataContext = loan.list1;
 
+        }
+        private void MapOuput_AIRTable(BorrowerAndLoanInformation obj1)
+        {
+            indexMarginOutput.Content = obj1.Margin;
+            initialRateOutput.Content = obj1.InterestRate;
+            minInterestRateOutput.Content = obj1.InterestRate;
+           
         }
 
         // if you delete this it yells

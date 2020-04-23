@@ -34,6 +34,8 @@ namespace TVA_CCU.Models
 
         public string InterestRate { get; set; }
 
+        public string Margin { get; set; }
+
         public string EstimatedTaxesAndInsurance { get; set; }
     }
 }
