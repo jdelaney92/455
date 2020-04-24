@@ -118,3 +118,20 @@ C:\Users\why33\OneDrive\Desktop\455-master-1\455-master\WpfApp2\obj\Debug\TVA.CC
 C:\Users\why33\OneDrive\Desktop\455-master-1\455-master\WpfApp2\obj\Debug\TVA.CCU.UI.csproj.CoreCompileInputs.cache
 C:\Users\why33\OneDrive\Desktop\455-master-1\455-master\WpfApp2\obj\Debug\TVA_CCU.exe
 C:\Users\why33\OneDrive\Desktop\455-master-1\455-master\WpfApp2\obj\Debug\TVA_CCU.pdb
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\bin\Debug\TVA_CCU.exe.config
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\bin\Debug\TVA_CCU.exe
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\bin\Debug\TVA_CCU.pdb
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\TVA.CCU.UI.csprojAssemblyReference.cache
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\LoanEstimate\LoanEstimateWindow.g.cs
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\MainWindow.g.cs
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\App.g.cs
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\TVA_CCU_MarkupCompile.cache
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\TVA_CCU_MarkupCompile.lref
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\LoanEstimate\LoanEstimateWindow.baml
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\MainWindow.baml
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\TVA_CCU.g.resources
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\TVA_CCU.Properties.Resources.resources
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\TVA.CCU.UI.csproj.GenerateResource.cache
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\TVA.CCU.UI.csproj.CoreCompileInputs.cache
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\TVA_CCU.exe
+C:\Users\Jonathan's PC\Source\Repos\455\WpfApp2\obj\Debug\TVA_CCU.pdb

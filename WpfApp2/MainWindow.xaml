@@ -12,10 +12,10 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Image Margin="116.284,86,272,0" Source="Images/tvaccu-logo-header-1.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="212" Grid.Column="1">
+        <Image Margin="274,88,274,0" Source="Images/tvaccu-logo-header-1.png" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="212" Grid.Column="1" Height="116">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -25,9 +25,18 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Button Content="Loan Estimate" HorizontalAlignment="Center" Margin="149.284,273,290,0" VerticalAlignment="Top" Width="161" Click="Button_Click" Grid.Column="1"/>
-        <Button Content="Purchase Closing Disclosure" HorizontalAlignment="Center" Margin="150.284,311,290,0" VerticalAlignment="Top" Width="160" Click="Button_Click" IsEnabled="False" Grid.Column="1"/>
-        <Button Content="Refinance Closing Disclosure" HorizontalAlignment="Center" Margin="150.284,349,290,0" VerticalAlignment="Top" Width="160" Click="Button_Click" IsEnabled="False" Grid.Column="1"/>
+        <Button Content="Loan Estimate" Margin="299,241,301,0" VerticalAlignment="Top" Width="160" Click="Button_Click" Grid.Column="1" Height="20" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Purchase Closing Disclosure" Margin="299,281,301,0" VerticalAlignment="Top" Width="160" Click="Button_Click" IsEnabled="False" Grid.Column="1" Height="20"/>
+        <Button Content="Refinance Closing Disclosure" Margin="299,319,301,0" VerticalAlignment="Top" Width="160" Click="Button_Click" IsEnabled="False" Grid.Column="1" Height="20"/>
 
     </Grid>
 

@@ -7,15 +7,15 @@
         mc:Ignorable="d"
 
         WindowStyle="SingleBorderWindow"
-        Title="Loan Estimate" Height="1376" Width="1005.6">
+        Title="Loan Estimate" Height="1300" Width="1239.6">
 
 
 
 
 
-    <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,0,-86">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,0,67">
 
-        <TabControl SelectionChanged="TabControl_SelectionChanged" Height="1428" RenderTransformOrigin="0.5,0.5">
+        <TabControl SelectionChanged="TabControl_SelectionChanged" Height="1665" RenderTransformOrigin="0.5,0.5" Width="1232">
 
 
             <!--
@@ -24,6 +24,10 @@
             <TabItem Header="Input Form">
 
                 <Grid RenderTransformOrigin="0.5,0.5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="113*"/>
+                        <ColumnDefinition Width="879*"/>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="73*"/>
                         <RowDefinition Height="389*"/>
@@ -40,7 +44,7 @@
                     <!--
                         Borrower and Loan Information
                      -->
-                    <Expander Header="BORROWER and LOAN INFORMATION" Margin="21,53,22.4,22.6" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+                    <Expander Header="BORROWER and LOAN INFORMATION" Margin="21,53,22,23" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" Grid.ColumnSpan="2">
                         <Expander.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -105,7 +109,7 @@
                     <!--
                         Closing Cost Information 
                      -->
-                    <Expander Header="CLOSING COST INFORMATION" Margin="470,53,-423.6,22.6" HorizontalAlignment="Left" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.51,0.454" Width="694" Grid.RowSpan="2">
+                    <Expander Header="CLOSING COST INFORMATION" Margin="353,53,-168,23" HorizontalAlignment="Left" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.51,0.454" Width="694" Grid.RowSpan="2" Grid.Column="1">
                         <Expander.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -186,9 +190,9 @@
                     <!--
                         Buttons for Input Page
                      -->
-                    <Button x:Name="InputData" Content ="Import" HorizontalAlignment="Left" Margin="200,13,0,0" VerticalAlignment="Top" Width="75" Click="InputData_Click" Height="20" RenderTransformOrigin="-1.809,0.761"/>
-                    <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Margin="300,13,0,0" VerticalAlignment="Top" Width="75" Click="Submit_Click" Height="20"/>
-                    <Button x:Name="ExportData" Content="Export" HorizontalAlignment="Left" Margin="400,13,0,0" VerticalAlignment="Top" Width="74" IsEnabled="False" Click="ExportData_Click" Height="20"/>
+                    <Button x:Name="InputData" Content ="Import" HorizontalAlignment="Left" Margin="87,13,0,0" VerticalAlignment="Top" Width="75" Click="InputData_Click" Height="20" RenderTransformOrigin="-1.809,0.761" Grid.Column="1"/>
+                    <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Margin="187,13,0,0" VerticalAlignment="Top" Width="75" Click="Submit_Click" Height="20" Grid.Column="1"/>
+                    <Button x:Name="ExportData" Content="Export" HorizontalAlignment="Left" Margin="287,13,0,0" VerticalAlignment="Top" Width="74" IsEnabled="False" Click="ExportData_Click" Height="20" Grid.Column="1"/>
 
 
 
@@ -201,14 +205,14 @@
             -->
             <TabItem x:Name="Output" Header="Form Output" >
 
-                <Grid Margin="10,0,-16,15">
+                <Grid Margin="10,0,45,-4">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
 
                     <!--
-                        Header Picture and Contact Information
+                        Header Picture/Contact Information/Button
                     -->
                     <Image Source="/TVA_CCU;component/tvaccu-logo-header.png" Stretch="Fill" SnapsToDevicePixels="True" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="123" Width="201" Margin="51,0,0,0">
                         <Image.RenderTransform>
@@ -220,15 +224,18 @@
                             </TransformGroup>
                         </Image.RenderTransform>
                     </Image>
+
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="101" Margin="328,10,0,0" VerticalAlignment="Top" Width="168" RenderTransformOrigin="-0.114,0.52">
                         <Label x:Name="tvaContact" Content="www.tvaccu.com&#xA;(256)386-3000&#xA;(888)-724-2128" HorizontalAlignment="Left" Margin="5,0,0,9" VerticalAlignment="Bottom" Height="82" Width="152" FontWeight="Bold" FontSize="18"/>
                     </Border>
 
+                    <Button Content="Print" HorizontalAlignment="Left" Margin="662,10,0,0" VerticalAlignment="Top" Width="75"/>
+
                     <!--
                         Loan ID Header
                     -->
-                    <Label Content="Loan ID#" HorizontalAlignment="Left" Margin="567,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-                    <Label x:Name="loanIDOutput2" HorizontalAlignment="Left" Margin="641,10,0,0" VerticalAlignment="Top" Width="124" Height="26"/>
+                    <Label Content="Loan ID#" HorizontalAlignment="Left" Margin="569,105,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="loanIDOutput2" HorizontalAlignment="Left" Margin="662,100,0,0" VerticalAlignment="Top" Width="124" Height="26"/>
 
 
 
@@ -280,7 +287,7 @@
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="479" Margin="284,168,0,0" Stroke="Black" VerticalAlignment="Top" Width="278"/>
                     <Label HorizontalAlignment="Left" Margin="366,130,0,0" VerticalAlignment="Top" Width="98" FontWeight="Bold" FontSize="16" Height="10"/>
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="284,130,0,0" VerticalAlignment="Top" Width="278">
-                        <Label Content="Loan Costs" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+                        <Label Content="Loan Costs" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Height="39" Margin="93,-1"/>
                     </Border>
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="0,130,0,0" VerticalAlignment="Top" Width="278">
                         <Label Content="Loan Estimate" HorizontalAlignment="Center" VerticalAlignment="Center" Width="134" Height="38" FontWeight="Bold" FontSize="16" Margin="63,0,67,-1"/>
@@ -363,7 +370,7 @@
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="0,715,0,0" Stroke="Black" VerticalAlignment="Top" Width="274" RenderTransformOrigin="0.688,0.114"/>
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Margin="0,755,0,0" Stroke="Black" VerticalAlignment="Top" Width="274"/>
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="0,676,0,0" VerticalAlignment="Top" Width="274">
-                        <Label Content="Loan Terms" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+                        <Label Content="Loan Terms" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Height="39" Margin="89,-1"/>
                     </Border>
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="88" Margin="0,845,0,0" Stroke="Black" VerticalAlignment="Top" Width="274" RenderTransformOrigin="0.493,1.886"/>
 
@@ -396,7 +403,7 @@
                     <Label HorizontalAlignment="Left" Height="28" Margin="328,850,0,0" Content="*Adjust every 5 years starting in year 6" VerticalAlignment="Top" Width="222"/>
                     <Label HorizontalAlignment="Left" Height="26" Margin="279,878,0,0" Content="*Can go as high as:" VerticalAlignment="Top" Width="129"/>
                     <Label x:Name="loanTermsMax" Content="" HorizontalAlignment="Left" Margin="423,878,0,0" VerticalAlignment="Top" Width="51"/>
-                    <Label x:Name="maxInterest" Content="" HorizontalAlignment="Left" Margin="426,788,0,0" VerticalAlignment="Top" Width="35"/>
+                    <Label x:Name="maxInterest" Content="" HorizontalAlignment="Left" Margin="423,787,0,0" VerticalAlignment="Top" Width="48"/>
                     <Label HorizontalAlignment="Left" Height="28" Margin="492,878,0,0" Content="in years 15" VerticalAlignment="Top" Width="66"/>
                     <Label HorizontalAlignment="Left" Height="23" Margin="279,906,0,0" Content="*See AP Table for details" VerticalAlignment="Top" Width="222"/>
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="35" Margin="0,933,0,0" Stroke="Black" VerticalAlignment="Top" Width="274"/>
@@ -413,9 +420,9 @@
                         Projected Payments 
                     -->
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="0,1031,0,0" VerticalAlignment="Top" Width="278">
-                        <Label Content="Projected Payments" HorizontalAlignment="Center" Margin="42,9,52,1" VerticalAlignment="Center" Width="182" Height="41" FontWeight="Bold" FontSize="18"/>
+                        <Label Content="Projected Payments" HorizontalAlignment="Center" Margin="42,-1,52,-1" VerticalAlignment="Center" Width="182" Height="39" FontWeight="Bold" FontSize="18"/>
                     </Border>
-                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="104" Margin="0,1070,0,0" Stroke="Black" VerticalAlignment="Top" Width="562"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="104" Margin="0,1070,0,0" Stroke="Black" VerticalAlignment="Top" Width="563"/>
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="0,1070,0,0" Stroke="Black" VerticalAlignment="Top" Width="563"/>
                     <Label Content="MIN PMT" HorizontalAlignment="Left" Margin="143,1095,0,0" VerticalAlignment="Top" Width="71" Height="29" FontWeight="Bold"/>
                     <Label Content="MAX PMT" HorizontalAlignment="Left" Margin="143,1128,0,0" VerticalAlignment="Top" Height="32" Width="71" FontWeight="Bold" RenderTransformOrigin="-1.853,7.75"/>
@@ -439,50 +446,50 @@
                         Adjustable Payment (AP) Table
                     -->
 
-                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="211" Stroke="Black" VerticalAlignment="Top" Width="289" Margin="567,168,0,0"/>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="567,129,0,0" VerticalAlignment="Top" Width="289">
-                        <Label Content="Adjustable Payment (AP) Table" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="211" Stroke="Black" VerticalAlignment="Top" Width="289" Margin="861,715,0,0"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="861,676,0,0" VerticalAlignment="Top" Width="289">
+                        <Label Content="Adjustable Payment (AP) Table" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Height="39" Margin="23,-1,22,-1"/>
                     </Border>
-                    <Label Content="Interest Only Payments?" HorizontalAlignment="Left" Margin="567,168,0,0" VerticalAlignment="Top" Width="146" Height="24" FontWeight="Bold"/>
-                    <Label Content="Optional Payments?" HorizontalAlignment="Left" Margin="567,192,0,0" VerticalAlignment="Top" Width="146" Height="24" FontWeight="Bold"/>
-                    <Label Content="Step Payments?" HorizontalAlignment="Left" Margin="567,221,0,0" VerticalAlignment="Top" Width="146" Height="24" FontWeight="Bold"/>
-                    <Label Content="Seasonal Payments?" HorizontalAlignment="Left" Margin="567,250,0,0" VerticalAlignment="Top" Width="146" Height="24" FontWeight="Bold"/>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="27" Margin="567,275,0,0" VerticalAlignment="Top" Width="274">
+                    <Label Content="Interest Only Payments?" HorizontalAlignment="Left" Margin="861,715,0,0" VerticalAlignment="Top" Width="146" Height="24" FontWeight="Bold"/>
+                    <Label Content="Optional Payments?" HorizontalAlignment="Left" Margin="861,743,0,0" VerticalAlignment="Top" Width="146" Height="24" FontWeight="Bold"/>
+                    <Label Content="Step Payments?" HorizontalAlignment="Left" Margin="861,767,0,0" VerticalAlignment="Top" Width="146" Height="24" FontWeight="Bold"/>
+                    <Label Content="Seasonal Payments?" HorizontalAlignment="Left" Margin="861,792,0,0" VerticalAlignment="Top" Width="146" Height="24" FontWeight="Bold"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="27" Margin="861,815,0,0" VerticalAlignment="Top" Width="289">
                         <Label Content="Monthly Principal and Interest Payments" HorizontalAlignment="Left" VerticalAlignment="Top" Width="242" Height="24" FontWeight="Bold"/>
                     </Border>
-                    <Label Content="First Change/Amount" HorizontalAlignment="Left" Margin="567,302,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
-                    <Label Content="Subsequent Changes" HorizontalAlignment="Left" Margin="567,328,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
-                    <Label Content="Maximum Payment" HorizontalAlignment="Left" Margin="567,353,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
-                    <Label Content="NO" HorizontalAlignment="Left" Margin="759,170,0,0" VerticalAlignment="Top" Width="69"/>
-                    <Label Content="NO" HorizontalAlignment="Left" Margin="759,196,0,0" VerticalAlignment="Top" Width="69"/>
-                    <Label Content="NO" HorizontalAlignment="Left" Margin="759,222,0,0" VerticalAlignment="Top" Width="69"/>
-                    <Label Content="NO" HorizontalAlignment="Left" Margin="759,248,0,0" VerticalAlignment="Top" Width="69"/>
+                    <Label Content="First Change/Amount" HorizontalAlignment="Left" Margin="861,842,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
+                    <Label Content="Subsequent Changes" HorizontalAlignment="Left" Margin="861,868,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
+                    <Label Content="Maximum Payment" HorizontalAlignment="Left" Margin="861,893,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
+                    <Label Content="NO" HorizontalAlignment="Left" Margin="1081,715,0,0" VerticalAlignment="Top" Width="69" Height="23"/>
+                    <Label Content="NO" HorizontalAlignment="Left" Margin="1081,743,0,0" VerticalAlignment="Top" Width="69" Height="24"/>
+                    <Label Content="NO" HorizontalAlignment="Left" Margin="1081,767,0,0" VerticalAlignment="Top" Width="69" Height="23"/>
+                    <Label Content="NO" HorizontalAlignment="Left" Margin="1081,790,0,0" VerticalAlignment="Top" Width="69" Height="25"/>
                     <Label x:Name="firstChange" Content="" HorizontalAlignment="Left" Margin="759,302,0,0" VerticalAlignment="Top" Width="69"/>
-                    <Label Content="Annually" HorizontalAlignment="Left" Margin="759,328,0,0" VerticalAlignment="Top" Width="69"/>
+                    <Label Content="Annually" HorizontalAlignment="Left" Margin="1046,868,0,0" VerticalAlignment="Top" Width="69" RenderTransformOrigin="2.971,10.769"/>
                     <Label x:Name="maxPayment" Content="" HorizontalAlignment="Left" Margin="759,354,0,0" VerticalAlignment="Top" Width="69"/>
 
                     <!--
                         Calculating Cash to Close
                     -->
-                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="206" Stroke="Black" VerticalAlignment="Top" Width="289" Margin="567,441,0,0" RenderTransformOrigin="0.502,0.597"/>
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="567,402,0,0" VerticalAlignment="Top" Width="289">
-                        <Label Content="Calculating Cash to Close" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="209" Stroke="Black" VerticalAlignment="Top" Width="289" Margin="862,438,0,0" RenderTransformOrigin="0.502,0.597"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="862,399,0,0" VerticalAlignment="Top" Width="289">
+                        <Label Content="Calculating Cash to Close" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Height="39" Margin="45,-1,44,-1"/>
                     </Border>
-                    <Label Content="Total Closing Costs" HorizontalAlignment="Left" Margin="567,442,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
-                    <Label Content="Closing Costs Financed" HorizontalAlignment="Left" Margin="567,468,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
-                    <Label Content="Down Payments" HorizontalAlignment="Left" Margin="567,489,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
-                    <Label Content="Deposit" HorizontalAlignment="Left" Margin="567,515,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
-                    <Label Content="Funds for Borrower" HorizontalAlignment="Left" Margin="567,538,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
-                    <Label Content="Seller Credits" HorizontalAlignment="Left" Margin="567,564,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
-                    <Label Content="Adjustments/Credits" HorizontalAlignment="Left" Margin="567,590,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
-                    <Label Content="Estimated Cash to Close" HorizontalAlignment="Left" Margin="567,617,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
+                    <Label Content="Total Closing Costs" HorizontalAlignment="Left" Margin="861,438,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
+                    <Label Content="Closing Costs Financed" HorizontalAlignment="Left" Margin="861,464,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
+                    <Label Content="Down Payments" HorizontalAlignment="Left" Margin="862,489,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
+                    <Label Content="Deposit" HorizontalAlignment="Left" Margin="862,515,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
+                    <Label Content="Funds for Borrower" HorizontalAlignment="Left" Margin="861,541,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
+                    <Label Content="Seller Credits" HorizontalAlignment="Left" Margin="861,572,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
+                    <Label Content="Adjustments/Credits" HorizontalAlignment="Left" Margin="861,599,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
+                    <Label Content="Estimated Cash to Close" HorizontalAlignment="Left" Margin="861,625,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
 
 
                     <!--
                         Adjustable Interest Rate (AIR) Table
                     -->
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="567,676,0,0" VerticalAlignment="Top" Width="289">
-                        <Label Content="Adjustable Interest Rate (AIR) Table" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="0,3,-15,3" Width="287"/>
+                        <Label Content="Adjustable Interest Rate (AIR) Table" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="-1,-1,1,-1" Width="287" Height="39"/>
                     </Border>
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="246" Stroke="Black" VerticalAlignment="Top" Width="289" Margin="567,715,0,0" RenderTransformOrigin="0.502,0.597"/>
                     <Label Content="Index + Margin" HorizontalAlignment="Left" Margin="567,715,0,0" VerticalAlignment="Top" Width="138" Height="26" RenderTransformOrigin="0.529,0.346"/>
@@ -498,6 +505,119 @@
                     <Label x:Name="initialRateOutput" HorizontalAlignment="Left" Margin="798,741,0,0" VerticalAlignment="Top" Width="58" Height="26" Content=""/>
                     <Label x:Name="minInterestRateOutput" HorizontalAlignment="Left" Margin="728,767,0,0" VerticalAlignment="Top" Width="58" Height="26" Content=""/>
                     <Label x:Name="maxInterestRateOutput" HorizontalAlignment="Left" Margin="798,767,0,0" VerticalAlignment="Top" Width="58" Height="26" Content=""/>
+
+                    <!--
+                        Cost at Closing
+                    -->
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="143" Stroke="Black" VerticalAlignment="Top" Width="583" Margin="568,1031,0,0" RenderTransformOrigin="0.502,0.597"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="568,992,0,0" VerticalAlignment="Top" Width="289">
+                        <Label Content="Costs at Closing" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="71,-1,84,-1" Width="132" Height="39"/>
+                    </Border>
+                    <Label Content="Estimated Closing Costs" HorizontalAlignment="Left" Margin="569,1031,0,0" VerticalAlignment="Top" Width="145" Height="24" FontWeight="Bold"/>
+                    <Label Content="Estimated Cash to Close" HorizontalAlignment="Left" Margin="569,1077,0,0" VerticalAlignment="Top" Width="145" Height="24" FontWeight="Bold"/>
+
+
+                    <!--
+                        Other Costs
+                    -->
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="568,131,0,0" VerticalAlignment="Top" Width="289">
+                        <Label Content="Other Costs" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="81,-1,97,-1" Width="109" Height="39"/>
+                    </Border>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="479" Stroke="Black" VerticalAlignment="Top" Width="289" Margin="568,168,0,0" RenderTransformOrigin="0.502,0.597"/>
+                    <Label Content="E. Taxes/Government Fees&#xD;&#xA;" HorizontalAlignment="Left" Margin="567,168,0,0" VerticalAlignment="Top" Width="157" Height="24" FontWeight="Bold"/>
+                    <Label Content="Recording Fees" HorizontalAlignment="Left" Margin="568,197,0,0" VerticalAlignment="Top" Width="146" Height="24"/>
+                    <Label Content="Transfer Taxes" HorizontalAlignment="Left" Margin="568,221,0,0" VerticalAlignment="Top" Width="146" Height="24"/>
+                    <Label Content="F. Prepaids" HorizontalAlignment="Left" Margin="568,250,0,0" VerticalAlignment="Top" Width="157" Height="24" FontWeight="Bold"/>
+                    <Label Content="Homeowner's Insurance" HorizontalAlignment="Left" Margin="568,274,0,0" VerticalAlignment="Top" Width="146" Height="24"/>
+                    <Label Content="Mortgage Insurance&#xD;&#xA;" HorizontalAlignment="Left" Margin="568,300,0,0" VerticalAlignment="Top" Width="146" Height="24"/>
+                    <Label Content="Prepaid Taxes" HorizontalAlignment="Left" Margin="568,327,0,0" VerticalAlignment="Top" Width="146" Height="24"/>
+                    <Label Content="Property Taxes" HorizontalAlignment="Left" Margin="568,354,0,0" VerticalAlignment="Top" Width="146" Height="24"/>
+                    <Label Content="HOA Fees" HorizontalAlignment="Left" Margin="568,386,0,0" VerticalAlignment="Top" Width="146" Height="24"/>
+                    <Label Content="G. Initial Escrow Payment at Closing" HorizontalAlignment="Left" Margin="568,415,0,0" VerticalAlignment="Top" Width="218" Height="26" FontWeight="Bold"/>
+                    <Label Content="WE DO NOT ESCROW" HorizontalAlignment="Left" Margin="568,446,0,0" VerticalAlignment="Top" Width="146" Height="24"/>
+                    <Label Content="H. Other" HorizontalAlignment="Left" Margin="568,473,0,0" VerticalAlignment="Top" Width="218" Height="26" FontWeight="Bold"/>
+                    <Label Content="Title-Owners Policy" HorizontalAlignment="Left" Margin="567,503,0,0" VerticalAlignment="Top" Width="146" Height="24"/>
+                    <Label Content="I. Total Other Costs (E+F+G+H)&#xD;&#xA;" HorizontalAlignment="Left" Margin="568,531,0,0" VerticalAlignment="Top" Width="218" Height="26" FontWeight="Bold"/>
+                    <Label Content="J. Total Closing Costs" HorizontalAlignment="Left" Margin="568,567,0,0" VerticalAlignment="Top" Width="218" Height="26" FontWeight="Bold"/>
+                    <Label Content="D+I" HorizontalAlignment="Left" Margin="568,594,0,0" VerticalAlignment="Top" Width="146" Height="24"/>
+                    <Label Content="Lender Credits" HorizontalAlignment="Left" Margin="568,623,0,0" VerticalAlignment="Top" Width="146" Height="24"/>
+
+
+                    <!--
+                        Loan Officer Section
+                    -->
+                    <Label Content="Lender" HorizontalAlignment="Left" Margin="865,139,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="NMLS ID" HorizontalAlignment="Left" Margin="865,165,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="Loan Officer" HorizontalAlignment="Left" Margin="865,191,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="Email" HorizontalAlignment="Left" Margin="865,221,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="Phone" HorizontalAlignment="Left" Margin="865,247,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+
+                    <!--
+                        Comparisons
+                    -->
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="2,1203,0,0" VerticalAlignment="Top" Width="289">
+                        <Label Content="Comparisons" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="71,-1,84,-1" Width="132" Height="39"/>
+                    </Border>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="143" Stroke="Black" VerticalAlignment="Top" Width="561" Margin="2,1242,0,0" RenderTransformOrigin="0.502,0.597"/>
+
+
+                    <!--
+                        Other Considerations
+                    -->
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="569,1203,0,0" VerticalAlignment="Top" Width="289">
+                        <Label Content="Other Considerations&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="63,-1,51,-1" Width="173" Height="39"/>
+                    </Border>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="319" Stroke="Black" VerticalAlignment="Top" Width="581" Margin="569,1242,0,0" RenderTransformOrigin="0.502,0.597"/>
+                    <Label Content="Appraisal" HorizontalAlignment="Left" Margin="568,1242,0,0" VerticalAlignment="Top" Width="137" Height="24" FontWeight="Bold"/>
+                    <Label Content="Assumption" HorizontalAlignment="Left" Margin="569,1338,0,0" VerticalAlignment="Top" Width="145" Height="24" FontWeight="Bold"/>
+                    <Label Content="Homeowner's Insurance" HorizontalAlignment="Left" Margin="569,1367,0,0" VerticalAlignment="Top" Width="145" Height="24" FontWeight="Bold" RenderTransformOrigin="0.503,1.708"/>
+                    <Label Content="Late Payment" HorizontalAlignment="Left" Margin="569,1411,0,0" VerticalAlignment="Top" Width="145" Height="24" FontWeight="Bold"/>
+                    <Label Content="Refinance" HorizontalAlignment="Left" Margin="569,1457,0,0" VerticalAlignment="Top" Width="145" Height="24" FontWeight="Bold"/>
+                    <Label Content="Servicing" HorizontalAlignment="Left" Margin="569,1534,0,0" VerticalAlignment="Top" Width="145" Height="27" FontWeight="Bold"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="1,1413,0,0" VerticalAlignment="Top" Width="289">
+                        <Label Content="Confirm Receipt&#xA;" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="69,-1,82,-1" Width="136" Height="39"/>
+                    </Border>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="7,1594,0,0" Stroke="Black" VerticalAlignment="Top" Width="378" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="423,1594,0,0" Stroke="Black" VerticalAlignment="Top" Width="384" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                    <Label Content="Applicant Signature" HorizontalAlignment="Left" Margin="10,1596,0,0" VerticalAlignment="Top" Width="145" Height="34" FontWeight="Bold"/>
+                    <Label Content="Date" HorizontalAlignment="Left" Margin="328,1596,0,0" VerticalAlignment="Top" Width="56" Height="24" FontWeight="Bold"/>
+                    <Label Content="Co-Applicant Signature" HorizontalAlignment="Left" Margin="423,1596,0,0" VerticalAlignment="Top" Width="145" Height="34" FontWeight="Bold"/>
+                    <Label Content="Date" HorizontalAlignment="Left" Margin="759,1596,0,0" VerticalAlignment="Top" Width="48" Height="24" FontWeight="Bold"/>
+                    <Label Content="By signing, you are only confirming that you have received this form and contact information" HorizontalAlignment="Left" Margin="2,1452,0,0" VerticalAlignment="Top" Width="548" Height="29" FontWeight="Bold" AutomationProperties.IsOffscreenBehavior="Offscreen"/>
+                    <Label Content="for a HUD-approved housing counselor. You do not have to accept this loan because you " HorizontalAlignment="Left" Margin="2,1481,0,0" VerticalAlignment="Top" Width="548" Height="24" FontWeight="Bold"/>
+                    <Label Content="signed or received this form." HorizontalAlignment="Left" Margin="2,1510,0,0" VerticalAlignment="Top" Width="548" Height="24" FontWeight="Bold"/>
+                    <Label Content="We may order an appraisal to determine the property's value and charge you" HorizontalAlignment="Left" Margin="723,1242,0,0" VerticalAlignment="Top" Width="427" Height="24" AutomationProperties.IsOffscreenBehavior="Offscreen"/>
+                    <Label Content="for this appraisal. We will promptly give you a copy of any appraisal, even if" HorizontalAlignment="Left" Margin="723,1266,0,0" VerticalAlignment="Top" Width="427" Height="24" AutomationProperties.IsOffscreenBehavior="Offscreen"/>
+                    <Label Content="your loan does not close. You can pay for an additional appraisal, even if your" HorizontalAlignment="Left" Margin="723,1290,0,0" VerticalAlignment="Top" Width="427" Height="24" AutomationProperties.IsOffscreenBehavior="Offscreen"/>
+                    <Label Content="loan does not close. You can pay for an additional appraisal for your own use" HorizontalAlignment="Left" Margin="723,1314,0,0" VerticalAlignment="Top" Width="427" Height="24" AutomationProperties.IsOffscreenBehavior="Offscreen"/>
+                    <Label Content="" HorizontalAlignment="Left" Margin="723,1343,0,0" VerticalAlignment="Top" Width="427" Height="24" AutomationProperties.IsOffscreenBehavior="Offscreen"/>
+                    <Label Content="" HorizontalAlignment="Left" Margin="723,1367,0,0" VerticalAlignment="Top" Width="427" Height="24" AutomationProperties.IsOffscreenBehavior="Offscreen"/>
+                    <Label Content="We intend to service your loan. If so, you will make payments to us." HorizontalAlignment="Left" Margin="723,1537,0,0" VerticalAlignment="Top" Width="427" Height="24" AutomationProperties.IsOffscreenBehavior="Offscreen"/>
+                    <Label Content="" HorizontalAlignment="Left" Margin="723,1486,0,0" VerticalAlignment="Top" Width="427" Height="24" AutomationProperties.IsOffscreenBehavior="Offscreen"/>
+                    <Label Content="" HorizontalAlignment="Left" Margin="723,1462,0,0" VerticalAlignment="Top" Width="427" Height="24" AutomationProperties.IsOffscreenBehavior="Offscreen"/>
+                    <Label Content="" HorizontalAlignment="Left" Margin="723,1438,0,0" VerticalAlignment="Top" Width="427" Height="24" AutomationProperties.IsOffscreenBehavior="Offscreen"/>
+                    <Label Content="" HorizontalAlignment="Left" Margin="724,1413,0,0" VerticalAlignment="Top" Width="427" Height="24" AutomationProperties.IsOffscreenBehavior="Offscreen"/>
+                    <Label Content="" HorizontalAlignment="Left" Margin="724,1389,0,0" VerticalAlignment="Top" Width="427" Height="24" AutomationProperties.IsOffscreenBehavior="Offscreen"/>
+                    <Label Content="" HorizontalAlignment="Left" Margin="723,1510,0,0" VerticalAlignment="Top" Width="427" Height="24" AutomationProperties.IsOffscreenBehavior="Offscreen"/>
+
 
 
 
