@@ -675,13 +675,11 @@
                             <Label Width="93" Height="34">Extra Payments:</Label>
                             <TextBox Name="ExtraPayment" Width="161" Text="0" Height="20"/>
                         </WrapPanel>
-
-                        <Button x:Name="ChangeExtraPay" Content="Change Extra Payment" Click="ExtraPay_Change"  HorizontalAlignment="Center" Margin="0,0,25,0" Width="275"/>
+                        <Button x:Name="ChangeExtraPay" Content="Change Extra Payment" Click="ExtraPay_Change"  HorizontalAlignment="Center" Margin="10,0,279.8,0" Width="243"/>
 
                     </StackPanel>
 
                     <StackPanel Name="Loan_Summary" Grid.Column="0" Orientation="Vertical" Margin="356,0,99.6,1254">
-                        <Button HorizontalAlignment="Center" Width="518" Margin="10,0,9.6,0">Export</Button>
                         <Label HorizontalAlignment="Center" FontWeight="Bold">Loan Summary</Label>
 
                         <WrapPanel>
