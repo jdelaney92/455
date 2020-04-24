@@ -248,12 +248,12 @@
                     <Label x:Name="dateIssued" HorizontalAlignment="Left" Margin="94,170,0,0" VerticalAlignment="Top" Width="176" Height="24" Content=""/>
 
                     <Label Content="Applicants:" HorizontalAlignment="Left" Margin="0,195,0,0" VerticalAlignment="Top" Width="79" FontWeight="Bold" Height="26"/>
-                    <Label x:Name="applicantNameOutput" HorizontalAlignment="Left" Margin="94,0,0,1159" VerticalAlignment="Bottom" Width="176" Height="26"/>
+                    <Label x:Name="applicantNameOutput" HorizontalAlignment="Left" Margin="93,0,0,1419.667" VerticalAlignment="Bottom" Width="176" Height="26"/>
                     <Label x:Name="applicantStreetOutput" HorizontalAlignment="Left" Margin="94,231,0,0" VerticalAlignment="Top" Width="176" Height="26"/>
                     <Label x:Name="applicantCityOutput" HorizontalAlignment="Left" Margin="94,257,0,0" VerticalAlignment="Top" Width="176" Height="26"/>
 
                     <Label Content="Property:" HorizontalAlignment="Left" Margin="0,285,0,0" VerticalAlignment="Top" Width="79" FontWeight="Bold" Height="26"/>
-                    <Label x:Name="propertyStreetOutput" HorizontalAlignment="Right" Margin="0,288,728,0" VerticalAlignment="Top" Width="176" Height="26"/>
+                    <Label x:Name="propertyStreetOutput" HorizontalAlignment="Right" Margin="0,288,902.667,0" VerticalAlignment="Top" Width="176" Height="26"/>
                     <Label x:Name="propertyCityOutput" HorizontalAlignment="Left" Margin="94,314,0,0" VerticalAlignment="Top" Width="176" Height="26"/>
 
                     <Label Content="Sale Price:" HorizontalAlignment="Left" Margin="0,342,0,0" VerticalAlignment="Top" Width="79" FontWeight="Bold" RenderTransformOrigin="0.544,0.269" Height="26"/>
@@ -501,6 +501,10 @@
                     <Label Content="Limits on Interest Rate Changes" HorizontalAlignment="Left" Margin="567,867,0,0" VerticalAlignment="Top" Width="198" Height="26" RenderTransformOrigin="0.529,0.346" FontWeight="Bold"/>
                     <Label Content="First Change" HorizontalAlignment="Left" Margin="567,893,0,0" VerticalAlignment="Top" Width="146" Height="26" RenderTransformOrigin="0.5,0.5"/>
                     <Label Content="Subsequent Changes" HorizontalAlignment="Left" Margin="567,920,0,0" VerticalAlignment="Top" Width="138" Height="26" RenderTransformOrigin="0.529,0.346"/>
+                    <Label HorizontalAlignment="Left" Height="26" Margin="723,816,0,0" Content="Beginning 61st Month " VerticalAlignment="Top" Width="130"/>
+                    <Label HorizontalAlignment="Left" Height="26" Margin="751,842,0,0" Content="Every 60 Months" VerticalAlignment="Top" Width="107"/>
+                    <Label HorizontalAlignment="Left" Height="26" Margin="816,893,0,0" Content="2%" VerticalAlignment="Top" Width="37"/>
+                    <Label HorizontalAlignment="Left" Height="26" Margin="816,921,0,0" Content="2%" VerticalAlignment="Top" Width="37"/>
                     <Label x:Name="indexMarginOutput" HorizontalAlignment="Left" Margin="798,715,0,0" VerticalAlignment="Top" Width="58" Height="26" Content=""/>
                     <Label x:Name="initialRateOutput" HorizontalAlignment="Left" Margin="798,741,0,0" VerticalAlignment="Top" Width="58" Height="26" Content=""/>
                     <Label x:Name="minInterestRateOutput" HorizontalAlignment="Left" Margin="728,767,0,0" VerticalAlignment="Top" Width="58" Height="26" Content=""/>

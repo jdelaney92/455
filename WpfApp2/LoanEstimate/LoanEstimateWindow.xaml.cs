@@ -212,10 +212,12 @@ namespace TVA_CCU.Excel1
         }
         private void MapOuput_AIRTable(BorrowerAndLoanInformation obj1)
         {
-            indexMarginOutput.Content = obj1.Margin;
-            initialRateOutput.Content = obj1.InterestRate;
-            minInterestRateOutput.Content = obj1.InterestRate;
-           
+            indexMarginOutput.Content = Convert.ToDouble(obj1.Margin) + "%";
+            initialRateOutput.Content = Convert.ToDouble(obj1.InterestRate) + "%";
+            minInterestRateOutput.Content = Convert.ToDouble(obj1.InterestRate) + "%";
+            maxInterestRateOutput.Content = Convert.ToDouble(obj1.InterestRate) + 6 + "%";
+
+
         }
 
         // if you delete this it yells
