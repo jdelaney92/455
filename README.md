@@ -1,12 +1,12 @@
-# 455
+# TVA_CCA Loan Application
 
-#TODOs
-Input Form:
+##TODOs
+***Input Form:***
 •	Add Loan Officer input
 •	Import Functionality
 •	Export Functionality
 
-Form Output:
+***Form Output:***
 •	Print functionality
 •	Loan Costs output, but need to be in decimal with $ sign.
 •	Output for Projected Payments (Just MAX PMT)
@@ -17,5 +17,5 @@ Form Output:
 •	Comparisons box filled
 •	Service Provider List
 
-Payment Schedule:
+***Payment Schedule:***
 •	Export Functionality
